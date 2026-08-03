@@ -1,0 +1,41 @@
+/* Inquiro — Typography tokens */
+:root {
+  /* ---- Families ---- */
+  --font-display: "Space Grotesk", "PingFang SC", "Microsoft YaHei", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", "PingFang SC", "Microsoft YaHei", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+
+  /* ---- Weights (the product leans heavy) ---- */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-heavy: 800;
+  --weight-black: 900;
+
+  /* ---- Type scale ---- */
+  --text-2xs: 11px;   /* micro labels, axis ticks */
+  --text-xs: 12px;    /* eyebrows, badges, captions */
+  --text-sm: 13px;    /* secondary UI text */
+  --text-base: 15px;  /* body (product default) */
+  --text-md: 16px;    /* lead body */
+  --text-lg: 18px;    /* card titles */
+  --text-xl: 20px;    /* section subtitles (h3/h2) */
+  --text-2xl: 22px;   /* panel headings */
+  --text-3xl: 28px;   /* page titles (h1) */
+  --text-4xl: 38px;   /* big numbers / display */
+  --text-5xl: 46px;   /* hero (teacher) */
+  --text-6xl: 64px;   /* hero display (student) */
+
+  /* ---- Line heights ---- */
+  --leading-tight: 1.08;
+  --leading-snug: 1.25;
+  --leading-normal: 1.55;
+  --leading-relaxed: 1.72;
+
+  /* ---- Letter spacing ---- */
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.06em;
+  --tracking-eyebrow: 0.08em;  /* uppercase mono eyebrows */
+}

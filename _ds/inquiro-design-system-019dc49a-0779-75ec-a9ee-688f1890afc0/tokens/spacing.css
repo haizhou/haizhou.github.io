@@ -1,0 +1,46 @@
+/* Inquiro — Spacing, radii, shadows, motion */
+:root {
+  /* ---- Spacing scale (4px base) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ---- Radii ----
+     small UI keeps 8px; "studio/futuristic" surfaces use the large family */
+  --radius-xs: 8px;     /* buttons, inputs, badges-rect */
+  --radius-sm: 12px;    /* nav items, small tiles */
+  --radius-md: 16px;    /* tiles, inner cards */
+  --radius-lg: 18px;    /* member/evidence cards */
+  --radius-xl: 22px;    /* panels, studio surfaces */
+  --radius-2xl: 28px;   /* hero / glass frames */
+  --radius-pill: 999px; /* chips, badges, segmented controls */
+
+  /* ---- Shadows ---- */
+  --shadow-tight: 0 10px 24px rgba(0, 0, 0, 0.045);
+  --shadow-soft: 0 18px 48px rgba(0, 0, 0, 0.055);
+  --shadow-card: 0 8px 22px rgba(15, 23, 42, 0.05);
+  --shadow-btn: 0 8px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lift: 0 14px 30px rgba(31, 42, 68, 0.07);
+  --shadow-glass: 0 1px 0 rgba(255, 255, 255, 0.92) inset, 0 22px 58px rgba(31, 42, 68, 0.07);
+  --shadow-hero: 0 36px 90px rgba(31, 42, 68, 0.14);
+
+  /* ---- Glass / blur ---- */
+  --blur-glass: blur(22px) saturate(1.2); /* @kind other */
+  --blur-bar: blur(18px); /* @kind other */
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --dur-fast: 140ms; /* @kind other */
+  --dur-base: 180ms; /* @kind other */
+  --dur-slow: 260ms; /* @kind other */
+  --lift-hover: translateY(-2px); /* @kind other */
+  --press-scale: scale(0.98); /* @kind other */
+}

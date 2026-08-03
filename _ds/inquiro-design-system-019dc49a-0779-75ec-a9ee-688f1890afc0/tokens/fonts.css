@@ -1,0 +1,9 @@
+/* Inquiro webfonts
+   Loaded from Google Fonts CDN (no binaries are bundled with this system).
+   - Space Grotesk : display / futuristic teacher headings + big data numbers
+   - Inter         : UI + body (the real product font)
+   - Space Mono    : eyebrows, data labels, version tags, code
+   NOTE: substitution flag — the source product self-hosts/loads Inter only.
+   Space Grotesk + Space Mono were added by the design system for character;
+   swap for the brand's real display/mono faces if/when provided. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap");

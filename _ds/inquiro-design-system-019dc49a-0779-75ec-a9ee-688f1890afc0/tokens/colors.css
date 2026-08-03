@@ -1,0 +1,101 @@
+/* Inquiro — Color tokens
+   Two energies share one palette:
+   • Teacher (futuristic): ink + blue→teal→gold gradients, glass
+   • Student (lively): lime energy + teal + warm accents
+*/
+:root {
+  /* ---- Neutral / ink ---- */
+  --ink-900: #12151c;   /* near-black, hero text, dark surfaces */
+  --ink-800: #151821;   /* teacher ink */
+  --ink-700: #232936;   /* strong body text */
+  --ink-600: #3e4654;   /* body text */
+  --ink-500: #697180;   /* muted */
+  --ink-400: #8a92a2;   /* faint / labels */
+  --ink-300: #b9c0cc;   /* disabled text */
+
+  --line: #ececf1;                 /* hairline border */
+  --line-soft: rgba(218, 224, 235, 0.92); /* glass border */
+  --bg: #f7f7fb;                   /* page background */
+  --surface: #ffffff;              /* card / panel */
+  --surface-soft: #f3f3f6;         /* inset / track */
+
+  /* ---- Brand primaries ---- */
+  --blue: #2f6fed;        /* teacher primary, links */
+  --blue-500: #5d8fe8;    /* softer blue */
+  --blue-700: #1e4779;    /* blue text on soft */
+  --blue-soft: #eaf3ff;   /* blue tint surface */
+
+  --teal: #21a985;        /* success, progress, bridge color */
+  --teal-500: #69d7b0;
+  --teal-700: #16765b;    /* teal text on soft */
+  --teal-soft: #e8fbf3;
+
+  --lime: #c9f35b;        /* student energy / spotlight */
+  --lime-600: #a3d138;
+  --lime-ink: #3f6212;    /* accessible text on lime */
+  --lime-soft: #f2ffd5;
+
+  --gold: #efad44;        /* warning, highlight, accent */
+  --gold-600: #d3a72e;
+  --gold-ink: #714707;    /* gold text on soft */
+  --gold-soft: #fff4c8;
+
+  --coral: #e36c4f;       /* alert / attention */
+  --coral-soft: #ffeae3;
+  --red: #e86982;         /* danger */
+  --red-ink: #a3324a;
+  --red-soft: #ffeef3;
+
+  --violet: #9a99d0;      /* secondary categorical */
+  --violet-soft: #ecebff;
+  --pink: #df64b8;        /* secondary categorical */
+  --pink-soft: #ffe6f7;
+
+  /* ---- Stage accents (the 10-stage learning flow) ---- */
+  --stage-materials: #5d8fe8;
+  --stage-inquiry: #9a99d0;
+  --stage-artifact: #21a985;
+  --stage-check: #69d7b0;
+  --stage-understanding: #2f6fed;
+  --stage-feedback: #df64b8;
+  --stage-revision: #efad44;
+  --stage-group: #e36c4f;
+  --stage-reflection: #c9f35b;
+
+  /* ---- Semantic aliases ---- */
+  --text-strong: var(--ink-900);
+  --text-heading: var(--ink-800);
+  --text-body: var(--ink-600);
+  --text-muted: var(--ink-500);
+  --text-faint: var(--ink-400);
+  --text-on-dark: #f8fafc;
+
+  --surface-page: var(--bg);
+  --surface-card: var(--surface);
+  --surface-inset: var(--surface-soft);
+  --border-card: var(--line);
+  --border-glass: var(--line-soft);
+
+  --accent: var(--blue);          /* default / teacher primary */
+  --accent-student: var(--teal);  /* student primary action */
+  --accent-spark: var(--lime);    /* student energy / highlight */
+
+  --success: var(--teal);
+  --warning: var(--gold);
+  --danger: var(--red);
+  --alert: var(--coral);
+  --info: var(--blue);
+
+  /* ---- Signature gradients ---- */
+  --grad-flow: linear-gradient(90deg, var(--blue), var(--teal), var(--gold));
+  --grad-bridge: linear-gradient(135deg, var(--blue), var(--teal));
+  --grad-spark: linear-gradient(135deg, var(--lime), var(--teal-500));
+  --grad-ink: linear-gradient(135deg, rgba(18,21,28,0.96), rgba(32,42,58,0.96)); /* @kind color */
+  --grad-teacher-wash:
+    linear-gradient(105deg, rgba(47,111,237,0.13), transparent 36%),
+    linear-gradient(250deg, rgba(33,169,133,0.11), transparent 34%),
+    linear-gradient(0deg, rgba(239,173,68,0.09), transparent 42%); /* @kind color */
+  --grad-student-wash:
+    radial-gradient(circle at 12% -10%, rgba(201,243,91,0.30), transparent 42%),
+    radial-gradient(circle at 92% 0%, rgba(105,215,176,0.22), transparent 40%); /* @kind color */
+}
