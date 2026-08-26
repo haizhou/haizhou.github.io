@@ -135,21 +135,21 @@
       </article>
       <article style="display:flex;flex-direction:column;gap:8px">
         <div style="display:flex;gap:16px;align-items:baseline">
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18.5px;line-height:1.35;color:var(--ink-900);margin:0;flex:1 1 auto;min-width:0;text-wrap:pretty">Multimodal Document Reranking with Vision-Language Models</h3>
+          <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-400);white-space:nowrap;margin-left:auto;flex:none">Jan 2026 — Mar 2026</span>
+        </div>
+        <p style="font-size:14.5px;line-height:1.5;color:var(--ink-500);margin:0">Research Project · UCL</p>
+        <p style="font-size:15.5px;line-height:1.7;color:var(--ink-600);margin:0;text-wrap:pretty">Built a retriever-agnostic multimodal reranker for RAG, using ColQwen2 (a late-interaction visual retriever) for candidate retrieval and Qwen2.5-VL-7B for CoT-based second-stage ranking. Curated 7,200 high-quality SFT traces via hard-negative mining, single-page reasoning, and rationale refinement, then applied resolution-balanced GRPO with LoRA and mixed-precision training on 4× NVIDIA A100 GPUs, improving MMDocIR Macro Recall@1 from 64.81% to 69.51% (+4.70 pp).</p>
+        <button type="button" onClick="{{ openRerank }}" style="align-self:flex-start;margin-top:3px;border:0;background:none;padding:0;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;color:var(--blue-700);display:inline-flex;align-items:center;gap:6px;white-space:nowrap" style-hover="color:var(--teal-700)">View project <i data-lucide="arrow-right" style="width:14px;height:14px;flex:none"></i></button>
+      </article>
+      <article style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;gap:16px;align-items:baseline">
           <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18.5px;line-height:1.35;color:var(--ink-900);margin:0;flex:1 1 auto;min-width:0;text-wrap:pretty">GUI Element Localisation with Vision-Language Models</h3>
           <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-400);white-space:nowrap;margin-left:auto;flex:none">Sep 2025 — Nov 2025</span>
         </div>
         <p style="font-size:14.5px;line-height:1.5;color:var(--ink-500);margin:0">Course Research Project · UCL</p>
         <p style="font-size:15.5px;line-height:1.7;color:var(--ink-600);margin:0;text-wrap:pretty">Built a DOM-independent visual-grounding model that predicts click coordinates directly from desktop, web, and mobile screenshots. Qwen2.5-VL-3B with LoRA achieved 84.9% point-in-box accuracy on ScreenSpot and over 93% on text elements.</p>
         <button type="button" onClick="{{ openGui }}" style="align-self:flex-start;margin-top:3px;border:0;background:none;padding:0;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;color:var(--blue-700);display:inline-flex;align-items:center;gap:6px;white-space:nowrap" style-hover="color:var(--teal-700)">View project <i data-lucide="arrow-right" style="width:14px;height:14px;flex:none"></i></button>
-      </article>
-      <article style="display:flex;flex-direction:column;gap:8px">
-        <div style="display:flex;gap:16px;align-items:baseline">
-          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18.5px;line-height:1.35;color:var(--ink-900);margin:0;flex:1 1 auto;min-width:0;text-wrap:pretty">Multimodal Document Reranking with Vision-Language Models</h3>
-          <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-400);white-space:nowrap;margin-left:auto;flex:none">Jan 2026 — Mar 2026</span>
-        </div>
-        <p style="font-size:14.5px;line-height:1.5;color:var(--ink-500);margin:0">Research Project · UCL</p>
-        <p style="font-size:15.5px;line-height:1.7;color:var(--ink-600);margin:0;text-wrap:pretty">Developed a retriever-agnostic vision-language reranker that jointly reasons over text, tables, charts, and page layout. Trained Qwen2.5-VL-7B on 7,200 rationale-supervised examples with a two-stage SFT–RL pipeline, improving MMDocIR Macro Recall@1 from 0.648 to 0.695 over ColQwen2 retrieval.</p>
-        <button type="button" onClick="{{ openRerank }}" style="align-self:flex-start;margin-top:3px;border:0;background:none;padding:0;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;color:var(--blue-700);display:inline-flex;align-items:center;gap:6px;white-space:nowrap" style-hover="color:var(--teal-700)">View project <i data-lucide="arrow-right" style="width:14px;height:14px;flex:none"></i></button>
       </article>
       <article style="display:flex;flex-direction:column;gap:8px">
         <div style="display:flex;gap:16px;align-items:baseline">
@@ -337,31 +337,31 @@
     <section style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:56px 32px">
       <div style="max-width:760px;margin:0 auto">
       <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0 0 18px;text-align:center">Abstract</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0 0 16px;text-wrap:pretty">Document retrieval over real pages fails where the answer lives in a table, a chart or the layout rather than the body text. This project adds a retriever-agnostic vision-language reranker on top of the ColQwen2 retriever, reasoning jointly over text, tables, charts and page layout. Trained on 7,200 rationale-supervised examples through a two-stage SFT–RL pipeline, it lifts MMDocIR Macro Recall@1 from 0.648 to 0.695.</p>
+      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0 0 16px;text-wrap:pretty">Multimodal document retrieval often misses the best page when the answer depends on tables, figures, or layout rather than plain text. This project adds a plug-and-play reranker after first-stage retrieval: ColQwen2, a late-interaction visual retriever, proposes candidate pages, and Qwen2.5-VL-7B explicitly reasons over their relevance before producing the final ranking. A two-stage SFT–GRPO pipeline improves MMDocIR Macro Recall@1 from 64.81% to 69.51% (+4.70 pp).</p>
       </div>
     </section>
 
     <section style="max-width:760px;margin:0 auto;padding:56px 32px 72px;display:flex;flex-direction:column;gap:36px;width:100%;box-sizing:border-box">
       <div>
       <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0 0 18px;text-align:center">Approach</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0 0 16px;text-wrap:pretty">The reranker consumes the retriever’s candidate pages as images plus their extracted text, and is asked to justify its ranking before producing it. Supervision comes from 7,200 rationale-annotated examples; Qwen2.5-VL-7B is first fine-tuned on those rationales, then optimised against ranking reward.</p>
+      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0 0 16px;text-wrap:pretty">The pipeline starts from ColQwen2 candidates and mines high-scoring but irrelevant pages as hard negatives. To control supervision quality, each candidate page is analysed independently to avoid multi-image shortcut reasoning, then the per-page analyses are refined into concise positive/negative evidence, producing 7,200 SFT traces. After SFT, GRPO directly optimises ranking with a Top-1-focused result reward and a structured-format reward; 3,000 RL samples are resolution-balanced to stabilise training across heterogeneous page sizes. LoRA and mixed precision are used throughout on 4× NVIDIA A100 GPUs.</p>
       </div>
       <div>
       <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0 0 18px;text-align:center">Result</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0 0 16px;text-wrap:pretty">Macro Recall@1 improved from 0.648 to 0.695, with the largest gains on pages whose answer depends on a figure or table. Because the reranker is retriever-agnostic, the same module can sit on top of a different first-stage retriever without retraining it.</p>
+      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0 0 16px;text-wrap:pretty">Macro Recall@1 improves from 64.81% with ColQwen2 retrieval alone to 69.51% after reranking. The gain comes from combining high-quality reasoning supervision with RL that explicitly rewards putting relevant pages at the top of the list; the final 7B reranker also exceeds a Qwen2.5-VL-32B CoT baseline. Because the reranker is retriever-agnostic, it can be paired with other first-stage retrievers without redesigning the downstream component.</p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">
         <div style="display:flex;flex-direction:column;gap:5px;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md);text-align:center">
-          <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:26px;letter-spacing:-0.01em;color:var(--ink-900)">0.695</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:26px;letter-spacing:-0.01em;color:var(--ink-900)">69.51%</span>
           <span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">Macro Recall@1</span>
         </div>
         <div style="display:flex;flex-direction:column;gap:5px;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md);text-align:center">
-          <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:26px;letter-spacing:-0.01em;color:var(--ink-900)">+0.047</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:26px;letter-spacing:-0.01em;color:var(--ink-900)">+4.70 pp</span>
           <span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">Over ColQwen2</span>
         </div>
         <div style="display:flex;flex-direction:column;gap:5px;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md);text-align:center">
           <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:26px;letter-spacing:-0.01em;color:var(--ink-900)">7,200</span>
-          <span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">Rationale examples</span>
+          <span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">SFT traces</span>
         </div>
       </div>
     </section>
