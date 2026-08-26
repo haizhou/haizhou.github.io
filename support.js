@@ -1,576 +1,1911 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-<link rel="stylesheet" href="_ds/inquiro-design-system-019dc49a-0779-75ec-a9ee-688f1890afc0/tokens/fonts.css">
-<link rel="stylesheet" href="_ds/inquiro-design-system-019dc49a-0779-75ec-a9ee-688f1890afc0/tokens/colors.css">
-<link rel="stylesheet" href="_ds/inquiro-design-system-019dc49a-0779-75ec-a9ee-688f1890afc0/tokens/typography.css">
-<link rel="stylesheet" href="_ds/inquiro-design-system-019dc49a-0779-75ec-a9ee-688f1890afc0/tokens/spacing.css">
-<link rel="stylesheet" href="_ds/inquiro-design-system-019dc49a-0779-75ec-a9ee-688f1890afc0/tokens/base.css">
-<link rel="stylesheet" href="_ds/inquiro-design-system-019dc49a-0779-75ec-a9ee-688f1890afc0/styles.css">
-<script src="_ds/inquiro-design-system-019dc49a-0779-75ec-a9ee-688f1890afc0/_ds_bundle.js"></script>
-<script src="./image-slot.js"></script>
-<script src="https://unpkg.com/lucide@0.446.0/dist/umd/lucide.min.js"></script>
-<style>
-  :root {
-    --bg: #13161c; --surface: #1a1e26; --surface-soft: #20252f;
-    --ink-900: #edf1f7; --ink-800: #dfe4ec; --ink-700: #ccd3de; --ink-600: #aab3c1;
-    --ink-500: #8891a0; --ink-400: #737c8b;
-    --line: #262c37; --line-soft: rgba(84,94,112,0.85);
-    --blue-soft: #121d31; --teal-soft: #0e2119; --gold-soft: #241d10; --lime-soft: #1c2410;
-    --blue-700: #9dc0ff; --teal-700: #6fd8b4; --gold-ink: #e6c07a; --lime-ink: #cbe98a;
+// GENERATED from dc-runtime/src/*.ts — do not edit. Rebuild with `cd dc-runtime && bun run build`.
+"use strict";
+(() => {
+  var __defProp = Object.defineProperty;
+  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+  var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+
+  // src/react.ts
+  function getReact() {
+    const R = window.React;
+    if (!R) throw new Error("dc-runtime: window.React is not available yet");
+    return R;
   }
-  html[data-theme="light"] {
-    --bg: #f7f7fb; --surface: #ffffff; --surface-soft: #f3f3f6;
-    --ink-900: #12151c; --ink-800: #151821; --ink-700: #232936; --ink-600: #3e4654;
-    --ink-500: #697180; --ink-400: #8a92a2;
-    --line: #ececf1; --line-soft: rgba(218,224,235,0.92);
-    --blue-soft: #eaf3ff; --teal-soft: #e8fbf3; --gold-soft: #fff4c8; --lime-soft: #f2ffd5;
-    --blue-700: #1e4779; --teal-700: #16765b; --gold-ink: #714707; --lime-ink: #3f6212;
+  function getReactDOM() {
+    const RD = window.ReactDOM;
+    if (!RD) throw new Error("dc-runtime: window.ReactDOM is not available yet");
+    return RD;
   }
-  html { scroll-behavior: smooth; scroll-padding-top: 78px; }
-  body { margin: 0; background: var(--bg); color: var(--ink-700); font-family: Inter, system-ui, sans-serif; }
-  a { color: var(--blue-700); text-decoration: none; border-bottom: 1px solid transparent; transition: color 140ms cubic-bezier(0.22,1,0.36,1), border-color 140ms cubic-bezier(0.22,1,0.36,1); }
-  a:hover { color: var(--teal-700); border-bottom-color: var(--teal); }
-  ::selection { background: var(--lime); color: #12151c; }
-</style>
-</helmet>
+  var h = ((...args) => getReact().createElement(
+    ...args
+  ));
 
-<div style="min-height:100vh;background:var(--bg)">
-
-  <header style="position:sticky;top:0;z-index:40;backdrop-filter:blur(18px) saturate(1.2);background:color-mix(in srgb, var(--bg) 82%, transparent);border-bottom:1px solid var(--line)">
-    <nav style="max-width:820px;margin:0 auto;padding:12px 32px;display:flex;align-items:center;gap:12px">
-      <div style="flex:1;display:flex;flex-wrap:wrap;gap:2px">
-        <a href="#about" onClick="{{ goHome }}" style="border:0;padding:6px 10px;border-radius:var(--radius-xs);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-500)" style-hover="color:var(--ink-900);background:var(--surface-soft)">About</a>
-        <a href="#education" onClick="{{ goHome }}" style="border:0;padding:6px 10px;border-radius:var(--radius-xs);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-500)" style-hover="color:var(--ink-900);background:var(--surface-soft)">Education</a>
-        <a href="#research" onClick="{{ goHome }}" style="border:0;padding:6px 10px;border-radius:var(--radius-xs);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-500)" style-hover="color:var(--ink-900);background:var(--surface-soft)">Research</a>
-        <a href="#awards" onClick="{{ goHome }}" style="border:0;padding:6px 10px;border-radius:var(--radius-xs);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-500)" style-hover="color:var(--ink-900);background:var(--surface-soft)">Awards</a>
-      </div>
-      <button type="button" onClick="{{ toggleTheme }}" aria-label="Toggle color theme" style="width:32px;height:32px;flex:none;display:grid;place-items:center;border:1px solid var(--line);background:none;border-radius:var(--radius-xs);color:var(--ink-500);cursor:pointer;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="color:var(--ink-900);border-color:var(--ink-900)" style-active="transform:scale(0.98)">
-        <i data-lucide="sun-moon" style="width:15px;height:15px"></i>
-      </button>
-    </nav>
-  </header>
-
-  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
-  <main style="max-width:820px;margin:0 auto;padding:72px 32px 104px;display:flex;flex-direction:column;gap:68px">
-
-    <section id="about" style="display:flex;flex-direction:column;gap:30px">
-      <div style="display:grid;grid-template-columns:1fr 168px;gap:44px;align-items:start">
-        <div style="display:flex;flex-direction:column;gap:18px">
-          <div style="display:flex;flex-direction:column;gap:8px">
-            <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:52px;line-height:1;letter-spacing:-0.03em;color:var(--ink-900);margin:0">Hai Zhou</h1>
-            <p style="font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-400);margin:0">M.SC. STUDENT · LONDON</p>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:12px">
-            <p style="font-size:16.5px;line-height:1.78;color:var(--ink-600);margin:0;text-wrap:pretty">I am an MSc student in Integrated Machine Learning Systems at <a href="https://www.ucl.ac.uk/" target="_blank" rel="noreferrer">University College London</a>, advised by <a href="https://profiles.ucl.ac.uk/7661-miguel-rodrigues" target="_blank" rel="noreferrer">Prof. Miguel Rodrigues</a>. My research focuses on natural language processing and reliable AI agents.</p>
-            <p style="font-size:16.5px;line-height:1.78;color:var(--ink-600);margin:0;text-wrap:pretty">I am particularly interested in extending verifiable and auditable reasoning from structured data to multimodal agents operating in digital and physical environments. I study how agents can interpret complex tasks, preserve constraints during execution, learn from verified experience, and abstain when the available evidence is insufficient.</p>
-            <p style="font-size:16.5px;line-height:1.78;color:var(--ink-600);margin:0;text-wrap:pretty">Before moving into machine learning, I completed a BEng in Microelectronic Science and Engineering at <a href="https://www.nju.edu.cn/" target="_blank" rel="noreferrer">Nanjing University</a>, where I worked with <a href="https://ese.nju.edu.cn/wjb_24027/list.htm" target="_blank" rel="noreferrer">Prof. Jingbo Wu</a> on programmable terahertz devices.</p>
-          </div>
-          <p style="font-family:'Space Mono',monospace;font-size:11.5px;line-height:1.7;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-500);margin:0;text-wrap:pretty">
-            Grounded Agents · Typed Program Synthesis · Process-Aware Verification · Execution-Verified Training · Calibrated Abstention
-          </p>
-        </div>
-        <image-slot id="hz-portrait" style="width:168px;height:200px" shape="rounded" radius="10" placeholder="Portrait"></image-slot>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:8px">
-        <a href="mailto:uceeh01@ucl.ac.uk" style="display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:0 14px;border:1px solid var(--line);border-radius:var(--radius-xs);color:var(--ink-700);font-size:14px;font-weight:500;white-space:nowrap;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="border-color:var(--ink-900);color:var(--ink-900)" style-active="transform:scale(0.98)"><i data-lucide="mail" style="width:15px;height:15px"></i>uceeh01@ucl.ac.uk</a>
-        <a href="uploads/HaiZhou_CV-edc14bde.pdf" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:0 14px;border:1px solid var(--line);border-radius:var(--radius-xs);color:var(--ink-700);font-size:14px;font-weight:500;white-space:nowrap;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="border-color:var(--ink-900);color:var(--ink-900)" style-active="transform:scale(0.98)"><i data-lucide="file-text" style="width:15px;height:15px"></i>CV (PDF)</a>
-        <a href="https://github.com/haizhou" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:0 14px;border:1px solid var(--line);border-radius:var(--radius-xs);color:var(--ink-700);font-size:14px;font-weight:500;white-space:nowrap;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="border-color:var(--ink-900);color:var(--ink-900)" style-active="transform:scale(0.98)"><i data-lucide="github" style="width:15px;height:15px"></i>GitHub</a>
-        <a href="https://www.linkedin.com/in/hai-zhou-3b60b8389/?isSelfProfile=false" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:0 14px;border:1px solid var(--line);border-radius:var(--radius-xs);color:var(--ink-700);font-size:14px;font-weight:500;white-space:nowrap;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="border-color:var(--ink-900);color:var(--ink-900)" style-active="transform:scale(0.98)"><i data-lucide="linkedin" style="width:15px;height:15px"></i>LinkedIn</a>
-      </div>
-    </section>
-
-    <section id="education" style="display:flex;flex-direction:column;gap:26px">
-      <div style="display:flex;align-items:center;gap:14px">
-        <span style="width:3px;height:20px;border-radius:2px;background:var(--grad-flow);flex:none"></span>
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:21px;letter-spacing:-0.01em;color:var(--ink-900);margin:0;white-space:nowrap">Education</h2>
-        <span style="flex:1;height:1px;background:var(--line)"></span>
-      </div>
-      <div style="display:flex;gap:20px;align-items:flex-start">
-        <image-slot id="hz-crest-ucl" style="width:42px;height:42px;flex:none" shape="rounded" radius="6" fit="contain" placeholder="UCL"></image-slot>
-        <div style="flex:1;display:flex;flex-direction:column;gap:6px">
-          <div style="display:flex;gap:16px;align-items:baseline">
-            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;color:var(--ink-900);margin:0;flex:1 1 auto;min-width:0"><a href="https://www.ucl.ac.uk/" target="_blank" rel="noreferrer" style="color:inherit">University College London</a></h3>
-            <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-400);white-space:nowrap;margin-left:auto;flex:none">Sep 2025 — Sep 2026</span>
-          </div>
-          <p style="font-size:14.5px;line-height:1.5;color:var(--ink-500);margin:0">M.Sc. Integrated Machine Learning Systems</p>
-          <p style="font-size:15.5px;line-height:1.65;color:var(--ink-600);margin:0">Average 78.06/100 — distinction level, final classification pending.</p>
-        </div>
-      </div>
-      <div style="display:flex;gap:20px;align-items:flex-start">
-        <image-slot id="hz-crest-nju" style="width:42px;height:42px;flex:none" shape="rounded" radius="6" fit="contain" placeholder="NJU"></image-slot>
-        <div style="flex:1;display:flex;flex-direction:column;gap:6px">
-          <div style="display:flex;gap:16px;align-items:baseline">
-            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;color:var(--ink-900);margin:0;flex:1 1 auto;min-width:0"><a href="https://www.nju.edu.cn/" target="_blank" rel="noreferrer" style="color:inherit">Nanjing University</a></h3>
-            <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-400);white-space:nowrap;margin-left:auto;flex:none">Sep 2021 — Jul 2025</span>
-          </div>
-          <p style="font-size:14.5px;line-height:1.5;color:var(--ink-500);margin:0">B.Eng. Microelectronic Science and Engineering</p>
-          <p style="font-size:15.5px;line-height:1.65;color:var(--ink-600);margin:0">Average 87.2/100.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="research" style="display:flex;flex-direction:column;gap:36px">
-      <div style="display:flex;align-items:center;gap:14px">
-        <span style="width:3px;height:20px;border-radius:2px;background:var(--grad-flow);flex:none"></span>
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:21px;letter-spacing:-0.01em;color:var(--ink-900);margin:0;white-space:nowrap">Research</h2>
-        <span style="flex:1;height:1px;background:var(--line)"></span>
-      </div>
-      <article style="display:flex;flex-direction:column;gap:8px">
-        <div style="display:flex;gap:16px;align-items:baseline">
-          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18.5px;line-height:1.35;color:var(--ink-900);margin:0;flex:1 1 auto;min-width:0;text-wrap:pretty">Auditable Compositional Question Answering over UK Public Procurement</h3>
-          <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-400);white-space:nowrap;margin-left:auto;flex:none">May 2026 — Present</span>
-        </div>
-        <p style="font-size:14.5px;line-height:1.5;color:var(--ink-500);margin:0">M.Sc. Thesis · UCL · Advisor: <a href="https://profiles.ucl.ac.uk/7661-miguel-rodrigues" target="_blank" rel="noreferrer">Prof. Miguel Rodrigues</a></p>
-        <p style="font-size:15.5px;line-height:1.7;color:var(--ink-600);margin:0;text-wrap:pretty">Started from 166,277 real-world UK procurement releases that could not be queried safely without resolving fragmented organisation identities, conflicting monetary semantics, duplicated records, and missing evidence. I turned them into a canonical, provenance-preserving knowledge graph and a 12,828-question program-first benchmark whose answers are produced by deterministic execution rather than an LLM. When the available records cannot support a unique answer, the system returns a typed <code style="font-family:'Space Mono',monospace;font-size:0.9em;color:var(--ink-700)">ambiguous</code>, <code style="font-family:'Space Mono',monospace;font-size:0.9em;color:var(--ink-700)">unsupported</code>, or <code style="font-family:'Space Mono',monospace;font-size:0.9em;color:var(--ink-700)">no-result</code> outcome with provenance rather than guessing.</p>
-        <p style="font-size:15.5px;line-height:1.7;color:var(--ink-600);margin:0;text-wrap:pretty">A cloud teacher proposes candidate typed plans, but only traces that pass structural checks, KG grounding, deterministic execution, and oracle agreement become supervision. The resulting local 8B student reaches 85.65% on the sealed test and 78.31% on PACS, providing evidence that verified supervision can improve recombination of familiar operators on unseen compositions—not that the student is a more general foundation model.</p>
-        <button type="button" onClick="{{ openThesis }}" style="align-self:flex-start;margin-top:3px;border:0;background:none;padding:0;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;color:var(--blue-700);display:inline-flex;align-items:center;gap:6px;white-space:nowrap" style-hover="color:var(--teal-700)">View project <i data-lucide="arrow-right" style="width:14px;height:14px;flex:none"></i></button>
-      </article>
-      <article style="display:flex;flex-direction:column;gap:8px">
-        <div style="display:flex;gap:16px;align-items:baseline">
-          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18.5px;line-height:1.35;color:var(--ink-900);margin:0;flex:1 1 auto;min-width:0;text-wrap:pretty">Multimodal Document Reranking with Vision-Language Models</h3>
-          <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-400);white-space:nowrap;margin-left:auto;flex:none">Jan 2026 — Mar 2026</span>
-        </div>
-        <p style="font-size:14.5px;line-height:1.5;color:var(--ink-500);margin:0">Research Project · UCL</p>
-        <p style="font-size:15.5px;line-height:1.7;color:var(--ink-600);margin:0;text-wrap:pretty">Built a retriever-agnostic multimodal reranker for RAG: ColQwen2, a late-interaction visual retriever, supplies candidate pages while Qwen2.5-VL-7B performs CoT-based second-stage ranking. Constructed 7,200 quality-controlled SFT traces via hard-negative mining, single-page reasoning, and rationale refinement, then applied resolution-balanced GRPO with LoRA and mixed-precision distributed training on 4× A100 GPUs, improving MMDocIR Macro Recall@1 from 64.81% to 69.51% (+4.70 pp).</p>
-        <button type="button" onClick="{{ openRerank }}" style="align-self:flex-start;margin-top:3px;border:0;background:none;padding:0;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;color:var(--blue-700);display:inline-flex;align-items:center;gap:6px;white-space:nowrap" style-hover="color:var(--teal-700)">View project <i data-lucide="arrow-right" style="width:14px;height:14px;flex:none"></i></button>
-      </article>
-      <article style="display:flex;flex-direction:column;gap:8px">
-        <div style="display:flex;gap:16px;align-items:baseline">
-          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18.5px;line-height:1.35;color:var(--ink-900);margin:0;flex:1 1 auto;min-width:0;text-wrap:pretty">GUI Element Localisation with Vision-Language Models</h3>
-          <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-400);white-space:nowrap;margin-left:auto;flex:none">Sep 2025 — Nov 2025</span>
-        </div>
-        <p style="font-size:14.5px;line-height:1.5;color:var(--ink-500);margin:0">Course Research Project · UCL</p>
-        <p style="font-size:15.5px;line-height:1.7;color:var(--ink-600);margin:0;text-wrap:pretty">Built a DOM-independent visual-grounding model that predicts click coordinates directly from desktop, web, and mobile screenshots. Qwen2.5-VL-3B with LoRA achieved 84.9% point-in-box accuracy on ScreenSpot and over 93% on text elements.</p>
-        <button type="button" onClick="{{ openGui }}" style="align-self:flex-start;margin-top:3px;border:0;background:none;padding:0;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;color:var(--blue-700);display:inline-flex;align-items:center;gap:6px;white-space:nowrap" style-hover="color:var(--teal-700)">View project <i data-lucide="arrow-right" style="width:14px;height:14px;flex:none"></i></button>
-      </article>
-      <article style="display:flex;flex-direction:column;gap:8px">
-        <div style="display:flex;gap:16px;align-items:baseline">
-          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18.5px;line-height:1.35;color:var(--ink-900);margin:0;flex:1 1 auto;min-width:0;text-wrap:pretty">KG-Grounded Preference Optimisation for Multi-Hop Question Answering</h3>
-          <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-400);white-space:nowrap;margin-left:auto;flex:none">Apr 2026 — Jul 2026</span>
-        </div>
-        <p style="font-size:14.5px;line-height:1.5;color:var(--ink-500);margin:0">Deep Learning for NLP Project · UCL</p>
-        <p style="font-size:15.5px;line-height:1.7;color:var(--ink-600);margin:0;text-wrap:pretty">Built 387 annotation-free preference pairs by combining R-GCN path plausibility with NLI entailment, then fine-tuned Qwen2-0.5B using reference-free DPO with no knowledge-graph access at inference. The analysis showed that structural plausibility and textual entailment can diverge substantially in multi-hop KGQA.</p>
-        <button type="button" onClick="{{ openKgdpo }}" style="align-self:flex-start;margin-top:3px;border:0;background:none;padding:0;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;color:var(--blue-700);display:inline-flex;align-items:center;gap:6px;white-space:nowrap" style-hover="color:var(--teal-700)">View project <i data-lucide="arrow-right" style="width:14px;height:14px;flex:none"></i></button>
-      </article>
-    </section>
-
-    <section id="awards" style="display:flex;flex-direction:column;gap:22px">
-      <div style="display:flex;align-items:center;gap:14px">
-        <span style="width:3px;height:20px;border-radius:2px;background:var(--grad-flow);flex:none"></span>
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:21px;letter-spacing:-0.01em;color:var(--ink-900);margin:0;white-space:nowrap">Awards &amp; Honours</h2>
-        <span style="flex:1;height:1px;background:var(--line)"></span>
-      </div>
-      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column">
-        <li style="display:flex;gap:18px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--line)">
-          <span style="font-size:15.5px;line-height:1.55;color:var(--ink-700);flex:1 1 auto;min-width:0"><a href="https://jsjds.blcu.edu.cn/" target="_blank" rel="noreferrer" style="color:inherit">National Second Prize, Chinese Collegiate Computing Competition</a></span>
-          <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-400);white-space:nowrap;margin-left:auto;flex:none">2023</span>
-        </li>
-        <li style="display:flex;gap:18px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--line)">
-          <span style="font-size:15.5px;line-height:1.55;color:var(--ink-700);flex:1 1 auto;min-width:0"><a href="https://www.comap.com/contests/mcm-icm" target="_blank" rel="noreferrer" style="color:inherit">Honorable Mention, Mathematical Contest in Modeling</a></span>
-          <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-400);white-space:nowrap;margin-left:auto;flex:none">2024</span>
-        </li>
-        <li style="display:flex;gap:18px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--line)">
-          <span style="font-size:15.5px;line-height:1.55;color:var(--ink-700);flex:1 1 auto;min-width:0"><a href="https://cy.ncss.cn/" target="_blank" rel="noreferrer" style="color:inherit">China College Students’ Innovation and Entrepreneurship Competition</a>, provincial training grant</span>
-          <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-400);white-space:nowrap;margin-left:auto;flex:none">2023 — 2025</span>
-        </li>
-        <li style="display:flex;gap:18px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--line)">
-          <span style="font-size:15.5px;line-height:1.55;color:var(--ink-700);flex:1 1 auto;min-width:0"><a href="https://www.nju.edu.cn/" target="_blank" rel="noreferrer" style="color:inherit">Renmin Scholarship, Nanjing University</a></span>
-          <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-400);white-space:nowrap;margin-left:auto;flex:none">2022, 2023, 2024</span>
-        </li>
-      </ul>
-    </section>
-  </main>
-  </sc-if>
-
-  <sc-if value="{{ isThesis }}" hint-placeholder-val="{{ false }}">
-  <div style="display:flex;flex-direction:column">
-
-    <section style="max-width:900px;margin:0 auto;padding:56px 32px 36px;display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center;width:100%;box-sizing:border-box">
-      <button type="button" onClick="{{ goHome }}" style="align-self:flex-start;display:inline-flex;align-items:center;gap:7px;min-height:32px;padding:0 12px;border:1px solid var(--line);border-radius:var(--radius-pill);background:none;color:var(--ink-500);font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="color:var(--ink-900);border-color:var(--ink-900)" style-active="transform:scale(0.98)"><i data-lucide="arrow-left" style="width:14px;height:14px;flex:none"></i>Hai Zhou</button>
-      <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:40px;line-height:1.12;letter-spacing:-0.03em;color:var(--ink-900);margin:0;max-width:24ch;text-wrap:balance">Auditable Compositional Question Answering over UK Public Procurement</h1>
-      <p style="font-size:19px;line-height:1.55;color:var(--ink-600);margin:0;max-width:62ch;text-wrap:balance">From messy public records to verified planner supervision: an executable pipeline for answers that can be traced, checked, or explicitly refused.</p>
-      <p style="font-size:17px;line-height:1.5;color:var(--ink-700);margin:0;font-weight:500">Hai Zhou</p>
-      <p style="font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-400);margin:0">M.Sc. Thesis · UCL · 2026</p>
-      <p style="font-size:14.5px;line-height:1.6;color:var(--ink-500);margin:0;max-width:60ch">Advisor: <a href="https://profiles.ucl.ac.uk/7661-miguel-rodrigues" target="_blank" rel="noreferrer">Prof. Miguel Rodrigues</a> · manuscript in preparation</p>
-      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding-top:6px">
-        <a href="mailto:uceeh01@ucl.ac.uk?subject=Auditable%20Compositional%20QA" style="display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 18px;border-radius:var(--radius-pill);background:var(--ink-900);color:var(--bg);font-size:14px;font-weight:600;white-space:nowrap;border-bottom:0;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="transform:translateY(-2px);color:var(--bg)" style-active="transform:translateY(0) scale(0.98)"><i data-lucide="mail" style="width:15px;height:15px;flex:none"></i>Email</a>
-        <a href="uploads/HaiZhou_CV-edc14bde.pdf" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 18px;border-radius:var(--radius-pill);background:var(--ink-900);color:var(--bg);font-size:14px;font-weight:600;white-space:nowrap;border-bottom:0;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="transform:translateY(-2px);color:var(--bg)" style-active="transform:translateY(0) scale(0.98)"><i data-lucide="file-text" style="width:15px;height:15px;flex:none"></i>CV (PDF)</a>
-      </div>
-      <div role="status" style="width:100%;max-width:640px;box-sizing:border-box;display:flex;align-items:center;gap:13px;margin:12px 0 0;padding:14px 18px;border:1px solid var(--gold-ink);border-radius:var(--radius-md);background:var(--gold-soft);color:var(--gold-ink);text-align:left;box-shadow:0 8px 24px rgba(0,0,0,0.12)"><i data-lucide="construction" style="width:22px;height:22px;flex:none"></i><span style="display:flex;flex-direction:column;gap:2px"><strong style="font-family:'Space Grotesk',sans-serif;font-size:15px;line-height:1.3;letter-spacing:0.01em">Page under construction</strong><span style="font-size:13px;line-height:1.45;color:var(--ink-600)">Content, figures, and links are still being updated.</span></span></div>
-    </section>
-
-    <section style="max-width:900px;margin:0 auto;padding:0 32px 48px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:10px">
-      <figure style="margin:0;display:flex;flex-direction:column;gap:10px">
-        <div style="position:relative;width:100%;aspect-ratio:16/8.5;border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;background:var(--surface);padding:10px;box-sizing:border-box">
-          <image-slot id="hz-fig-thesis" shape="rect" fit="contain" placeholder="Drop the system overview figure"></image-slot>
-        </div>
-        <figcaption style="font-size:13.5px;line-height:1.6;color:var(--ink-500);margin:0"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">Fig. 1</span> — End-to-end system. The teacher proposes candidate plans; deterministic verification controls which traces become supervision, and deployment ends with typed execution rather than free-form answer generation.</figcaption>
-      </figure>
-    </section>
-
-    <section style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:56px 32px">
-      <div style="max-width:740px;margin:0 auto;display:flex;flex-direction:column;gap:18px">
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">Why procurement QA needs an executable world</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">UK procurement records are public, but they are not query-ready. Across 166,277 OCDS releases, the same organisation can appear under many identifiers, monetary values can be repeated across tender, lot, award, and contract records, and missing fields can make a fluent answer impossible to justify. The practical bottleneck is therefore not only retrieval or model scale: the system first needs a world state whose entities, calculations, and evidence boundaries are explicit.</p>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">This project connects data curation, task generation, verification, and model training in one auditable chain. Questions originate from executable programs; teachers propose candidate plans; deterministic checks decide what is correct; and only verified traces supervise a local student planner. Every deployment outcome ends as an answer with provenance or a typed abstention—not an unsupported guess.</p>
-      </div>
-    </section>
-
-    <section style="max-width:740px;margin:0 auto;padding:56px 32px 24px;width:100%;box-sizing:border-box;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px">
-        <div style="display:flex;flex-direction:column;gap:5px;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md);text-align:center">
-          <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:26px;letter-spacing:-0.01em;color:var(--ink-900)">85.65%</span>
-          <span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">Sealed test</span>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:5px;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md);text-align:center">
-          <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:26px;letter-spacing:-0.01em;color:var(--ink-900)">78.31%</span>
-          <span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">PACS challenge</span>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:5px;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md);text-align:center">
-          <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:26px;letter-spacing:-0.01em;color:var(--ink-900)">12,828</span>
-          <span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">Gold programs</span>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:5px;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md);text-align:center">
-          <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:26px;letter-spacing:-0.01em;color:var(--ink-900)">99.88%</span>
-          <span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">Oracle agreement</span>
-        </div>
-    </section>
-
-    <section style="max-width:900px;margin:0 auto;padding:24px 32px 40px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:20px">
-      <div style="max-width:740px;display:flex;flex-direction:column;gap:10px">
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">From raw records to a verified answer</h2>
-        <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">Each stage produces an inspectable artifact for the next stage to consume. The endpoint is not just model text: it is an execution record containing a typed program, deterministic result, evidence, provenance, and—when the evidence boundary is reached—an explicit abstention status.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px">
-        <div style="padding:16px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);display:flex;flex-direction:column;gap:7px"><span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--ink-400)">01 · SEMANTICS</span><strong style="font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--ink-800)">Field contracts</strong><span style="font-size:13px;line-height:1.55;color:var(--ink-500)">Identity, value, and refusal rules</span></div>
-        <div style="padding:16px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);display:flex;flex-direction:column;gap:7px"><span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--ink-400)">02 · WORLD</span><strong style="font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--ink-800)">Canonical graph</strong><span style="font-size:13px;line-height:1.55;color:var(--ink-500)">Typed entities and provenance</span></div>
-        <div style="padding:16px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);display:flex;flex-direction:column;gap:7px"><span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--ink-400)">03 · TASK</span><strong style="font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--ink-800)">Gold program</strong><span style="font-size:13px;line-height:1.55;color:var(--ink-500)">Question, answer, and evidence</span></div>
-        <div style="padding:16px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);display:flex;flex-direction:column;gap:7px"><span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--ink-400)">04 · VERIFY</span><strong style="font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--ink-800)">Accepted trace</strong><span style="font-size:13px;line-height:1.55;color:var(--ink-500)">Static, execution, and oracle checks</span></div>
-        <div style="padding:16px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);display:flex;flex-direction:column;gap:7px"><span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--ink-400)">05 · LEARN</span><strong style="font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--ink-800)">Student planner</strong><span style="font-size:13px;line-height:1.55;color:var(--ink-500)">Filtered, executable supervision</span></div>
-      </div>
-      <div style="padding:14px 18px;border-left:3px solid var(--gold-ink);border-radius:0 var(--radius-md) var(--radius-md) 0;background:var(--gold-soft);font-size:14px;line-height:1.6;color:var(--ink-700)"><strong style="color:var(--ink-900)">Deployment output:</strong> answer + evidence, or a typed <code style="font-family:'Space Mono',monospace;font-size:0.9em">ambiguous</code>, <code style="font-family:'Space Mono',monospace;font-size:0.9em">unsupported</code>, or <code style="font-family:'Space Mono',monospace;font-size:0.9em">no-result</code> status.</div>
-    </section>
-
-    <section style="max-width:740px;margin:0 auto;padding:16px 32px 32px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:18px">
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">01 · Define the data before asking the model</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty"><strong style="color:var(--ink-800)">Problem.</strong> One government body may appear under dozens of platform identifiers, values may be repeated across procurement stages, and important relations may require multi-hop entity links. A valid-looking query can therefore execute the wrong accounting rule.</p>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty"><strong style="color:var(--ink-800)">Artifact.</strong> A precision-first pipeline defines value precedence, additivity, deduplication, entity identity, and refusal conditions before training. Scheme–ID and exact name/address matches are applied deterministically; fuzzy matching proposes review candidates but never writes a merge directly. The resulting buyer, supplier, award, and contract graph becomes the executor's canonical world state.</p>
-    </section>
-
-    <section style="max-width:740px;margin:0 auto;padding:16px 32px 32px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:18px">
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">02 · Generate tasks from executable programs</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty"><strong style="color:var(--ink-800)">Problem.</strong> If an LLM writes both a question and its answer, fluent synthetic data can still encode invented entities, invalid calculations, or inconsistent answer contracts.</p>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty"><strong style="color:var(--ink-800)">Artifact.</strong> A legal computation is instantiated from 17 typed operators, executed on the graph, and only then verbalised as a question. Each of the 12,828 tasks retains its gold program, answer contract, grounded entities and relations, executor output, answerability label, evidence, provenance, and composition metadata. The teacher may propose a plan; it never defines the gold truth.</p>
-    </section>
-
-    <section style="max-width:740px;margin:0 auto;padding:16px 32px 32px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:18px">
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">03 · Verify the process, not just the final text</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty"><strong style="color:var(--ink-800)">Problem.</strong> A plausible final answer does not reveal whether the plan used a nonexistent relation, an invalid join, duplicated money, or a broken dependency chain.</p>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty"><strong style="color:var(--ink-800)">Artifact.</strong> Static checks validate schema, types, references, dependencies, literals, and answer contracts. Execution checks validate grounding, guarded aggregation, deduplication, joins, intermediate states, and the final result. A second evaluator with no shared execution code then recomputes the answers, reaching 99.88% agreement across 14,770 audited cases and reducing the risk of two components silently sharing the same bug.</p>
-    </section>
-
-    <section style="max-width:740px;margin:0 auto;padding:16px 32px 32px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:18px">
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">04 · Let verified traces teach the student</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty"><strong style="color:var(--ink-800)">Problem.</strong> Direct distillation transfers the teacher's useful structure and its mistakes together. A well-formed trace may still hallucinate an entity, omit a dependency, or violate the graph's accounting semantics.</p>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty"><strong style="color:var(--ink-800)">Artifact.</strong> The teacher samples candidate typed plans; deterministic verification filters them; accepted traces enter supervised fine-tuning and rejection-sampling/self-harvest. Preference experiments are kept outside the headline systems because near-miss negatives were not consistently stable. The student learns reusable operators, typed wiring rules, and the boundary between grounded execution and merely plausible reasoning.</p>
-    </section>
-
-    <section style="max-width:740px;margin:0 auto;padding:16px 32px 32px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:18px">
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">05 · Return evidence—or abstain with a reason</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty"><strong style="color:var(--ink-800)">Problem.</strong> Missing evidence and an empty answer are not planner failures, and repeatedly repairing them can turn uncertainty into fabrication.</p>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty"><strong style="color:var(--ink-800)">Artifact.</strong> Abstention is a first-class typed output rather than a post-hoc confidence threshold. Ambiguous identity, unavailable evidence, and a valid empty execution produce <code style="font-family:'Space Mono',monospace;font-size:0.9em;color:var(--ink-700)">ambiguous</code>, <code style="font-family:'Space Mono',monospace;font-size:0.9em;color:var(--ink-700)">unsupported</code>, and <code style="font-family:'Space Mono',monospace;font-size:0.9em;color:var(--ink-700)">no-result</code> with provenance. Meaningful empties and justified refusals are final; bounded repair is reserved for typed planning or grounding failures.</p>
-    </section>
-
-    <section style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:48px 32px;margin-top:8px">
-      <div style="max-width:740px;margin:0 auto;display:flex;flex-direction:column;gap:18px">
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">What the results show</h2>
-        <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">The evaluation is a capability ladder rather than a single opaque score. Retrieval alone reaches 31.5% on development; an untrained local 8B model routed through the typed executor reaches 70.4%; supervised planning reaches 81.2%; and jointly training local reading and planning reaches 86.2% on development and 85.65% on the sealed 2,285-question test. The final local system also reaches 78.31% on the sealed PACS challenge, while the zero-shot cloud teacher reaches 69.76% on the procurement test.</p>
-        <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">Oracle-program execution separates data, DSL, grounding, and executor failures from learned planning errors. The independently implemented evaluator then checks that the generator and executor are not validating one another circularly. Failures remain attributable to a stage instead of disappearing inside end-to-end accuracy.</p>
-      </div>
-    </section>
-
-    <section style="max-width:740px;margin:0 auto;padding:48px 32px 40px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:18px">
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">Current evidence and claim boundary</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">Additional leakage-audited diagnostics reach 98.99% on the pre-audited set and 88.58% on the composition probe. A strictly held-out <code style="font-family:'Space Mono',monospace;font-size:0.9em;color:var(--ink-700)">intersect</code> composition is solved in all 39 of 39 cases. Together, these results support the narrow claim that a relatively small pool of deterministically verified traces can train a student planner to recombine familiar reasoning primitives in a withheld workflow.</p>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">They do not yet establish invention of arbitrary new operators, unrestricted recursive-depth extrapolation, or broad cross-domain transfer. A WikiTableQuestions study suggests that the architecture can transfer, while also exposing representation and program-language coverage as the main bottlenecks. The contribution is therefore task-specific, verifier-filtered compositional learning—not a claim that the student is a stronger foundation model.</p>
-    </section>
-
-    <section style="max-width:740px;margin:0 auto;padding:0 32px 80px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:12px">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">BibTeX</h2>
-        <button type="button" onClick="{{ copyBib }}" style="display:inline-flex;align-items:center;gap:7px;min-height:34px;padding:0 14px;border:1px solid var(--line);border-radius:var(--radius-pill);background:none;color:var(--ink-600);font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="color:var(--ink-900);border-color:var(--ink-900)" style-active="transform:scale(0.98)"><i data-lucide="copy" style="width:14px;height:14px;flex:none"></i>Copy</button>
-      </div>
-      <pre id="bibtex-code" style="margin:0;padding:20px;background:var(--surface-soft);border:1px solid var(--line);border-radius:var(--radius-md);overflow-x:auto;font-family:'Space Mono',monospace;font-size:13px;line-height:1.7;color:var(--ink-700)">@mastersthesis{zhou2026auditable,
-  title  = {Auditable Compositional Question Answering over UK Public Procurement},
-  author = {Zhou, Hai},
-  school = {University College London},
-  year   = {2026},
-  note   = {Manuscript in preparation}
-}</pre>
-    </section>
-  </div>
-  </sc-if>
-  <sc-if value="{{ isRerank }}" hint-placeholder-val="{{ false }}">
-  <div style="display:flex;flex-direction:column">
-
-    <section style="max-width:900px;margin:0 auto;padding:56px 32px 40px;display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center">
-      <button type="button" onClick="{{ goHome }}" style="align-self:flex-start;display:inline-flex;align-items:center;gap:7px;min-height:32px;padding:0 12px;border:1px solid var(--line);border-radius:var(--radius-pill);background:none;color:var(--ink-500);font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="color:var(--ink-900);border-color:var(--ink-900)" style-active="transform:scale(0.98)"><i data-lucide="arrow-left" style="width:14px;height:14px;flex:none"></i>Hai Zhou</button>
-      <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:40px;line-height:1.12;letter-spacing:-0.03em;color:var(--ink-900);margin:0;max-width:22ch;text-wrap:balance">Multimodal Document Reranking with Vision-Language Models</h1>
-      <p style="font-size:17px;line-height:1.5;color:var(--ink-700);margin:0;font-weight:500">Hai Zhou</p>
-      <p style="font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-400);margin:0">Research Project · Jan — Mar 2026</p>
-      <p style="font-size:14.5px;line-height:1.6;color:var(--ink-500);margin:0;max-width:60ch">University College London</p>
-      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding-top:6px">
-        <a href="mailto:uceeh01@ucl.ac.uk?subject=Multimodal%20Document%20Reranking%20with%20Vision-Language%20Models" style="display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 18px;border-radius:var(--radius-pill);background:var(--ink-900);color:var(--bg);font-size:14px;font-weight:600;white-space:nowrap;border-bottom:0;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="transform:translateY(-2px);color:var(--bg)" style-active="transform:translateY(0) scale(0.98)"><i data-lucide="mail" style="width:15px;height:15px"></i>Email</a>
-        <a href="uploads/HaiZhou_CV-edc14bde.pdf" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 18px;border-radius:var(--radius-pill);background:var(--ink-900);color:var(--bg);font-size:14px;font-weight:600;white-space:nowrap;border-bottom:0;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="transform:translateY(-2px);color:var(--bg)" style-active="transform:translateY(0) scale(0.98)"><i data-lucide="file-text" style="width:15px;height:15px"></i>CV (PDF)</a>
-      </div>
-      <div role="status" style="width:100%;max-width:640px;box-sizing:border-box;display:flex;align-items:center;gap:13px;margin:12px 0 0;padding:14px 18px;border:1px solid var(--gold-ink);border-radius:var(--radius-md);background:var(--gold-soft);color:var(--gold-ink);text-align:left;box-shadow:0 8px 24px rgba(0,0,0,0.12)"><i data-lucide="construction" style="width:22px;height:22px;flex:none"></i><span style="display:flex;flex-direction:column;gap:2px"><strong style="font-family:'Space Grotesk',sans-serif;font-size:15px;line-height:1.3;letter-spacing:0.01em">Page under construction</strong><span style="font-size:13px;line-height:1.45;color:var(--ink-600)">Content, figures, and links are still being updated.</span></span></div>
-    </section>
-
-
-    <section style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:56px 32px">
-      <div style="max-width:760px;margin:0 auto">
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0 0 18px;text-align:center">Abstract</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0 0 16px;text-wrap:pretty">Multimodal pages often hide the answer in tables, figures, or layout cues that first-stage retrieval scores only partially capture. This project adds a plug-and-play vision-language reranker after retrieval: <strong style="color:var(--ink-800)">ColQwen2</strong>, a late-interaction visual retriever, proposes candidate pages, and Qwen2.5-VL-7B explicitly reasons over each page before producing a refined ranking. A quality-controlled SFT → GRPO pipeline improves MMDocIR Macro Recall@1 from 64.81% to 69.51% (+4.70 percentage points).</p>
-      </div>
-    </section>
-
-    <section style="max-width:900px;margin:0 auto;padding:52px 32px 26px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:20px">
-      <div style="max-width:760px;margin:0 auto;width:100%">
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0 0 10px">End-to-end pipeline</h2>
-        <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">The system is designed as a second-stage component rather than a replacement retriever: first retrieve broadly, then spend VLM reasoning capacity only on a small candidate set.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px">
-        <div style="padding:16px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);display:flex;flex-direction:column;gap:7px"><span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--ink-400)">01 · RETRIEVE</span><strong style="font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--ink-800)">ColQwen2 candidates</strong><span style="font-size:13px;line-height:1.55;color:var(--ink-500)">Late-interaction visual retrieval over document pages</span></div>
-        <div style="padding:16px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);display:flex;flex-direction:column;gap:7px"><span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--ink-400)">02 · CURATE</span><strong style="font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--ink-800)">Hard negatives</strong><span style="font-size:13px;line-height:1.55;color:var(--ink-500)">Mine high-scoring but irrelevant pages from retriever outputs</span></div>
-        <div style="padding:16px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);display:flex;flex-direction:column;gap:7px"><span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--ink-400)">03 · REASON</span><strong style="font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--ink-800)">Single-page CoT</strong><span style="font-size:13px;line-height:1.55;color:var(--ink-500)">Analyse every candidate independently before comparison</span></div>
-        <div style="padding:16px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);display:flex;flex-direction:column;gap:7px"><span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--ink-400)">04 · SFT</span><strong style="font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--ink-800)">7.2K clean traces</strong><span style="font-size:13px;line-height:1.55;color:var(--ink-500)">Refine per-page analyses into concise ranking supervision</span></div>
-        <div style="padding:16px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);display:flex;flex-direction:column;gap:7px"><span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--ink-400)">05 · RL</span><strong style="font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--ink-800)">GRPO reranking</strong><span style="font-size:13px;line-height:1.55;color:var(--ink-500)">Top-1-focused result reward + structured format reward</span></div>
-      </div>
-    </section>
-
-    <section style="max-width:760px;margin:0 auto;padding:30px 32px 24px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:18px">
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">Data quality control</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty"><strong style="color:var(--ink-800)">Hard-negative mining.</strong> ColQwen2 scores are not used only for retrieval: high-scoring but non-relevant pages become hard negatives, forcing the reranker to distinguish genuinely answer-bearing evidence from visually or semantically similar distractors.</p>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty"><strong style="color:var(--ink-800)">Single-page reasoning before aggregation.</strong> Asking a VLM to reason over many pages at once encouraged shortcut behaviour—the model often analysed only the most obvious positive page. Each candidate is therefore judged independently, and the resulting analyses are compressed into a concise rationale that preserves positive and negative evidence without repeating ~50 words per page. This produced 7,200 high-quality SFT examples.</p>
-    </section>
-
-    <section style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:48px 32px;margin-top:12px">
-      <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:18px">
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">SFT → GRPO optimisation</h2>
-        <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty"><strong style="color:var(--ink-800)">SFT</strong> teaches Qwen2.5-VL-7B the task format and explicit relevance reasoning. <strong style="color:var(--ink-800)">GRPO</strong> then optimises the ranking decision itself using group-relative rollouts, avoiding a separate critic network.</p>
-        <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty"><strong style="color:var(--ink-800)">Result reward</strong> heavily prioritises early relevant pages with a 1/rank³ weighting (rank 1 = 1.0; rank 2 = 0.125), matching the RAG objective where Top-1 evidence matters most. <strong style="color:var(--ink-800)">Format reward</strong> imposes a hard &lt;think&gt;…&lt;/think&gt;&lt;answer&gt;…&lt;/answer&gt; structure and soft penalties for incorrect output length or out-of-range page IDs.</p>
-        <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty"><strong style="color:var(--ink-800)">Resolution-balanced RL sampling.</strong> Document pages vary from tens of thousands to millions of pixels, producing highly uneven visual-token and memory costs. Samples are sorted by average image resolution, split into 10 groups, and sampled proportionally across groups; 3,000 examples are used for RL so both low- and high-resolution pages participate consistently.</p>
-      </div>
-    </section>
-
-    <section style="max-width:760px;margin:0 auto;padding:48px 32px 28px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:18px">
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">Training systems</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">Training uses LoRA and mixed precision on <strong style="color:var(--ink-800)">4 × NVIDIA A100 GPUs</strong> in a distributed setup. A smaller LoRA capacity is sufficient during SFT to learn the task and reasoning format; RL uses a larger adapter capacity to give policy optimisation more freedom to reshape ranking preferences. The setup makes the project not only a modelling exercise, but also a practical study in multi-GPU VLM training under heterogeneous visual input costs.</p>
-    </section>
-
-    <section style="max-width:760px;margin:0 auto;padding:24px 32px 72px;display:flex;flex-direction:column;gap:26px;width:100%;box-sizing:border-box">
-      <div>
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0 0 18px">Results</h2>
-        <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">On the 1,658-query MMDocIR evaluation set, Macro Recall@1 rises from 64.81% for ColQwen2 retrieval alone to 69.51% after reranking. SFT and RL are complementary: SFT supplies stable reasoning behaviour, while GRPO directly aligns the model with ranking quality. The final 7B reranker also exceeds the Qwen2.5-VL-32B CoT baseline on Macro Recall@1, showing that training and supervision design can outweigh simple model scaling.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px">
-        <div style="display:flex;flex-direction:column;gap:5px;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md);text-align:center"><span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:26px;letter-spacing:-0.01em;color:var(--ink-900)">69.51%</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">Macro Recall@1</span></div>
-        <div style="display:flex;flex-direction:column;gap:5px;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md);text-align:center"><span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:26px;letter-spacing:-0.01em;color:var(--ink-900)">+4.70 pp</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">Over ColQwen2</span></div>
-        <div style="display:flex;flex-direction:column;gap:5px;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md);text-align:center"><span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:26px;letter-spacing:-0.01em;color:var(--ink-900)">7,200</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">SFT traces</span></div>
-        <div style="display:flex;flex-direction:column;gap:5px;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md);text-align:center"><span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:26px;letter-spacing:-0.01em;color:var(--ink-900)">3,000</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">RL samples</span></div>
-      </div>
-    </section>
-  </div>
-  </sc-if>
-
-  <sc-if value="{{ isKgdpo }}" hint-placeholder-val="{{ false }}">
-  <div style="display:flex;flex-direction:column">
-
-    <section style="max-width:900px;margin:0 auto;padding:56px 32px 40px;display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center">
-      <button type="button" onClick="{{ goHome }}" style="align-self:flex-start;display:inline-flex;align-items:center;gap:7px;min-height:32px;padding:0 12px;border:1px solid var(--line);border-radius:var(--radius-pill);background:none;color:var(--ink-500);font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="color:var(--ink-900);border-color:var(--ink-900)" style-active="transform:scale(0.98)"><i data-lucide="arrow-left" style="width:14px;height:14px;flex:none"></i>Hai Zhou</button>
-      <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:40px;line-height:1.12;letter-spacing:-0.03em;color:var(--ink-900);margin:0;max-width:22ch;text-wrap:balance">KG-Grounded Preference Optimisation for Multi-Hop Question Answering</h1>
-      <p style="font-size:17px;line-height:1.5;color:var(--ink-700);margin:0;font-weight:500">Hai Zhou</p>
-      <p style="font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-400);margin:0">Course Research · Apr — Jul 2026</p>
-      <p style="font-size:14.5px;line-height:1.6;color:var(--ink-500);margin:0;max-width:60ch">Deep Learning for NLP · University College London</p>
-      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding-top:6px">
-        <a href="mailto:uceeh01@ucl.ac.uk?subject=KG-Grounded%20Preference%20Optimisation%20for%20Multi-Hop%20Question%20Answering" style="display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 18px;border-radius:var(--radius-pill);background:var(--ink-900);color:var(--bg);font-size:14px;font-weight:600;white-space:nowrap;border-bottom:0;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="transform:translateY(-2px);color:var(--bg)" style-active="transform:translateY(0) scale(0.98)"><i data-lucide="mail" style="width:15px;height:15px"></i>Email</a>
-        <a href="uploads/HaiZhou_CV-edc14bde.pdf" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 18px;border-radius:var(--radius-pill);background:var(--ink-900);color:var(--bg);font-size:14px;font-weight:600;white-space:nowrap;border-bottom:0;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="transform:translateY(-2px);color:var(--bg)" style-active="transform:translateY(0) scale(0.98)"><i data-lucide="file-text" style="width:15px;height:15px"></i>CV (PDF)</a>
-      </div>
-      <div role="status" style="width:100%;max-width:640px;box-sizing:border-box;display:flex;align-items:center;gap:13px;margin:12px 0 0;padding:14px 18px;border:1px solid var(--gold-ink);border-radius:var(--radius-md);background:var(--gold-soft);color:var(--gold-ink);text-align:left;box-shadow:0 8px 24px rgba(0,0,0,0.12)"><i data-lucide="construction" style="width:22px;height:22px;flex:none"></i><span style="display:flex;flex-direction:column;gap:2px"><strong style="font-family:'Space Grotesk',sans-serif;font-size:15px;line-height:1.3;letter-spacing:0.01em">Page under construction</strong><span style="font-size:13px;line-height:1.45;color:var(--ink-600)">Content, figures, and links are still being updated.</span></span></div>
-    </section>
-
-
-    <section style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:56px 32px">
-      <div style="max-width:760px;margin:0 auto">
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0 0 18px;text-align:center">Abstract</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0 0 16px;text-wrap:pretty">Preference optimisation usually needs human labels. Here 387 preference pairs are constructed with none: R-GCN structural plausibility over the knowledge graph is fused with NLI entailment over the generated text, and the pair is kept only when the two signals agree on an ordering. A reference-free DPO objective then tunes Qwen2-0.5B, which needs no graph access at inference. The experiment also shows that structural and textual grounding metrics diverge in entity-centric multi-hop KGQA.</p>
-      </div>
-    </section>
-
-    <section style="max-width:760px;margin:0 auto;padding:56px 32px 72px;display:flex;flex-direction:column;gap:36px;width:100%;box-sizing:border-box">
-      <div>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0 0 18px;text-align:center">Approach</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0 0 16px;text-wrap:pretty">Candidate answers are scored twice — structurally, by an R-GCN over the graph neighbourhood, and textually, by an NLI entailment model against retrieved evidence. Disagreements are discarded rather than averaged, which keeps the resulting pairs clean enough for reference-free DPO on a 0.5B model.</p>
-      </div>
-      <div>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0 0 18px;text-align:center">Finding</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0 0 16px;text-wrap:pretty">An answer can be textually entailed while remaining structurally implausible, and vice versa. A single grounding score hides this failure mode, so reporting both is necessary when claiming that a multi-hop answer is grounded.</p>
-      </div>
-    </section>
-  </div>
-  </sc-if>
-
-  <sc-if value="{{ isGui }}" hint-placeholder-val="{{ false }}">
-  <div style="display:flex;flex-direction:column">
-
-    <section style="max-width:900px;margin:0 auto;padding:56px 32px 40px;display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center">
-      <button type="button" onClick="{{ goHome }}" style="align-self:flex-start;display:inline-flex;align-items:center;gap:7px;min-height:32px;padding:0 12px;border:1px solid var(--line);border-radius:var(--radius-pill);background:none;color:var(--ink-500);font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="color:var(--ink-900);border-color:var(--ink-900)" style-active="transform:scale(0.98)"><i data-lucide="arrow-left" style="width:14px;height:14px;flex:none"></i>Hai Zhou</button>
-      <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:40px;line-height:1.12;letter-spacing:-0.03em;color:var(--ink-900);margin:0;max-width:22ch;text-wrap:balance">GUI Element Localisation with Vision-Language Models</h1>
-      <p style="font-size:17px;line-height:1.5;color:var(--ink-700);margin:0;font-weight:500">Hai Zhou</p>
-      <p style="font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-400);margin:0">Course Research · Sep — Nov 2025</p>
-      <p style="font-size:14.5px;line-height:1.6;color:var(--ink-500);margin:0;max-width:60ch">University College London</p>
-      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding-top:6px">
-        <a href="mailto:uceeh01@ucl.ac.uk?subject=GUI%20Element%20Localisation%20with%20Vision-Language%20Models" style="display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 18px;border-radius:var(--radius-pill);background:var(--ink-900);color:var(--bg);font-size:14px;font-weight:600;white-space:nowrap;border-bottom:0;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="transform:translateY(-2px);color:var(--bg)" style-active="transform:translateY(0) scale(0.98)"><i data-lucide="mail" style="width:15px;height:15px"></i>Email</a>
-        <a href="uploads/HaiZhou_CV-edc14bde.pdf" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 18px;border-radius:var(--radius-pill);background:var(--ink-900);color:var(--bg);font-size:14px;font-weight:600;white-space:nowrap;border-bottom:0;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="transform:translateY(-2px);color:var(--bg)" style-active="transform:translateY(0) scale(0.98)"><i data-lucide="file-text" style="width:15px;height:15px"></i>CV (PDF)</a>
-      </div>
-      <div role="status" style="width:100%;max-width:640px;box-sizing:border-box;display:flex;align-items:center;gap:13px;margin:12px 0 0;padding:14px 18px;border:1px solid var(--gold-ink);border-radius:var(--radius-md);background:var(--gold-soft);color:var(--gold-ink);text-align:left;box-shadow:0 8px 24px rgba(0,0,0,0.12)"><i data-lucide="construction" style="width:22px;height:22px;flex:none"></i><span style="display:flex;flex-direction:column;gap:2px"><strong style="font-family:'Space Grotesk',sans-serif;font-size:15px;line-height:1.3;letter-spacing:0.01em">Page under construction</strong><span style="font-size:13px;line-height:1.45;color:var(--ink-600)">Content, figures, and links are still being updated.</span></span></div>
-    </section>
-
-
-    <section style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:56px 32px">
-      <div style="max-width:760px;margin:0 auto">
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0 0 18px;text-align:center">Abstract</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0 0 16px;text-wrap:pretty">Agents that operate interfaces usually read the DOM or accessibility tree, which is unavailable in many real environments. This project trains a DOM-independent visual grounding model that predicts click coordinates directly from desktop, web and mobile screenshots. Reusing each screenshot across 30 element queries yields 30× denser supervision per image; a LoRA-tuned Qwen2.5-VL-3B reaches 84.9% point-in-bounding-box accuracy on ScreenSpot and over 93% on text elements.</p>
-      </div>
-    </section>
-
-    <section style="max-width:760px;margin:0 auto;padding:56px 32px 72px;display:flex;flex-direction:column;gap:36px;width:100%;box-sizing:border-box">
-      <div>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0 0 18px;text-align:center">Data</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0 0 20px;text-wrap:pretty">The core difficulty is cross-platform generalisation: one model has to read desktop applications, web pages and mobile apps, which look nothing alike. The training set therefore pools roughly 24K samples from four public sources, selected for diversity rather than volume.</p>
-        <div style="display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)">
-          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">Platforms</span>
-          <span style="font-size:15.5px;line-height:1.6;color:var(--ink-600)">Windows and macOS desktops, Chrome and Firefox pages, Android and iOS apps.</span>
-        </div>
-        <div style="display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)">
-          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">Elements</span>
-          <span style="font-size:15.5px;line-height:1.6;color:var(--ink-600)">Buttons, text fields, icons, links, menus and other interactive controls.</span>
-        </div>
-        <div style="display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)">
-          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">Languages</span>
-          <span style="font-size:15.5px;line-height:1.6;color:var(--ink-600)">Predominantly English, with a portion of Chinese interfaces.</span>
-        </div>
-        <div style="display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)">
-          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">Resolutions</span>
-          <span style="font-size:15.5px;line-height:1.6;color:var(--ink-600)">720p through 4K, so element scale varies widely.</span>
-        </div>
-      </div>
-      <div>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0 0 18px;text-align:center">Approach</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0 0 16px;text-wrap:pretty">Each screenshot is paired with 30 element queries instead of one, so a single rendering supports far more supervision. The model outputs a point rather than a box, which matches how a click is actually issued and avoids ambiguity on nested elements.</p>
-      </div>
-      <div>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0 0 18px;text-align:center">Result</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0 0 16px;text-wrap:pretty">84.9% point-in-bounding-box accuracy on ScreenSpot, over 93% on text elements — with no accessibility tree or DOM at inference. Remaining errors concentrate on small icon-only controls and visually repeated list items.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">
-        <div style="display:flex;flex-direction:column;gap:5px;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md);text-align:center">
-          <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:26px;letter-spacing:-0.01em;color:var(--ink-900)">84.9%</span>
-          <span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">Point-in-box</span>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:5px;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md);text-align:center">
-          <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:26px;letter-spacing:-0.01em;color:var(--ink-900)">93%+</span>
-          <span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">Text elements</span>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:5px;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md);text-align:center">
-          <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:26px;letter-spacing:-0.01em;color:var(--ink-900)">30×</span>
-          <span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400)">Denser supervision</span>
-        </div>
-      </div>
-    </section>
-  </div>
-  </sc-if>
-
-  <footer style="border-top:1px solid var(--line)">
-    <div style="max-width:820px;margin:0 auto;padding:26px 32px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
-      <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-400)">© 2026 Hai Zhou · London, UK</span>
-      <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-400)">uceeh01@ucl.ac.uk</span>
-    </div>
-  </footer>
-</div>
-
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;defaultTheme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light' | 'dark'&quot;,&quot;section&quot;:&quot;Appearance&quot;}}">
-class Component extends DCLogic {
-  state = { theme: null, view: 'home', tab: 'all' };
-
-  componentDidMount() {
-    const theme = this.props.defaultTheme || 'light';
-    this.applyTheme(theme);
-    this.setState({ theme });
-    this.icons();
-  }
-
-  componentDidUpdate() { this.icons(); }
-
-  icons() {
-    if (window.lucide) window.lucide.createIcons();
-    else setTimeout(() => window.lucide && window.lucide.createIcons(), 400);
-  }
-
-  applyTheme(theme) {
-    const root = document.documentElement;
-    if (theme === 'light') root.setAttribute('data-theme', 'light');
-    else root.removeAttribute('data-theme');
-  }
-
-  open(view) {
-    this.setState({ view });
-    if (view !== 'home') window.scrollTo({ top: 0 });
-  }
-
-  renderVals() {
-    const v = this.state.view;
-    const t = this.state.tab;
+  // src/parse.ts
+  function parseDcDocument(doc) {
+    const dc = doc.querySelector("x-dc");
+    if (!dc) return null;
+    const scriptEl = doc.querySelector("script[data-dc-script]");
+    const { props, preview } = parseDataProps(
+      scriptEl?.getAttribute("data-props") ?? null
+    );
     return {
-      isTabAll: t === 'all', notTabAll: t !== 'all',
-      isTabResearch: t === 'research', notTabResearch: t !== 'research',
-      isTabCourse: t === 'course', notTabCourse: t !== 'course',
-      isHome: v === 'home',
-      isThesis: v === 'thesis',
-      isRerank: v === 'rerank',
-      isKgdpo: v === 'kgdpo',
-      isGui: v === 'gui',
-      showsResearch: t === 'all' || t === 'research',
-      showsCourse: t === 'all' || t === 'course',
-      showAll: () => this.setState({ tab: 'all' }),
-      showResearch: () => this.setState({ tab: 'research' }),
-      showCourse: () => this.setState({ tab: 'course' }),
-      goHome: () => this.open('home'),
-      copyBib: () => {
-        const el = document.getElementById('bibtex-code');
-        if (el && navigator.clipboard) navigator.clipboard.writeText(el.textContent);
+      template: dc.innerHTML,
+      js: scriptEl ? scriptEl.textContent || "" : "",
+      props,
+      preview
+    };
+  }
+  function parseDcText(src) {
+    const openMatch = /<x-dc(?:\s[^>]*)?>/.exec(src);
+    if (!openMatch) return null;
+    const close = src.lastIndexOf("</x-dc>");
+    if (close === -1 || close < openMatch.index) return null;
+    const template = src.slice(openMatch.index + openMatch[0].length, close);
+    const doc = new DOMParser().parseFromString(src, "text/html");
+    const scriptEl = doc.querySelector("script[data-dc-script]");
+    const { props, preview } = parseDataProps(
+      scriptEl?.getAttribute("data-props") ?? null
+    );
+    return {
+      template,
+      js: scriptEl ? scriptEl.textContent || "" : "",
+      props,
+      preview
+    };
+  }
+  function parseDataProps(raw) {
+    if (!raw) return { props: null, preview: null };
+    let parsed;
+    try {
+      parsed = JSON.parse(raw);
+    } catch {
+      return { props: null, preview: null };
+    }
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+      return { props: null, preview: null };
+    }
+    const obj = parsed;
+    const preview = obj.$preview && typeof obj.$preview === "object" ? obj.$preview : null;
+    const rest = {};
+    for (const k of Object.keys(obj)) {
+      if (k[0] !== "$") rest[k] = obj[k];
+    }
+    return { props: Object.keys(rest).length ? rest : null, preview };
+  }
+  function dcNameFromPath(pathname) {
+    let p = pathname || "";
+    try {
+      p = decodeURIComponent(p);
+    } catch {
+    }
+    const base = p.split("/").pop() || "Root";
+    return base.replace(/\.dc\.html$/, "").replace(/\.html?$/, "") || "Root";
+  }
+
+  // src/boot.ts
+  var BASE_CSS = `
+    .sc-placeholder{background:color-mix(in srgb,currentColor 8%,transparent);
+      border:1px solid color-mix(in srgb,currentColor 50%,transparent);
+      border-radius:2px;box-sizing:border-box;overflow:hidden}
+    @keyframes sc-shine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+    html.sc-dc-streaming .sc-placeholder,
+    html.sc-dc-streaming .sc-interp.sc-missing{position:relative;
+      background:color-mix(in srgb,currentColor 5%,transparent);
+      border-color:transparent}
+    html.sc-dc-streaming .sc-placeholder::before,
+    html.sc-dc-streaming .sc-interp.sc-missing::before{content:'';
+      position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(217,119,87,0) 25%,rgba(247,225,211,.95) 37%,rgba(217,119,87,0) 63%);
+      background-size:400% 100%;animation:sc-shine 1.4s ease infinite}
+    html.sc-dc-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
+    html.sc-dc-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
+      background:color-mix(in srgb,currentColor 8%,transparent)}
+    .sc-placeholder-error{padding:4px 8px;font:11px/1.4 ui-monospace,monospace;
+      color:color-mix(in srgb,currentColor 70%,transparent);word-break:break-word}
+    .sc-interp.sc-missing{display:inline-block;width:2em;height:1em;overflow:hidden;
+      vertical-align:text-bottom;background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
+      border-radius:2px;box-sizing:border-box;color:transparent;
+      user-select:none}
+    .sc-interp.sc-unresolved{font-family:ui-monospace,monospace;font-size:.85em;
+      color:color-mix(in srgb,currentColor 50%,transparent);
+      background:color-mix(in srgb,currentColor 10%,transparent);border-radius:3px;
+      padding:0 3px}
+    .sc-host.sc-has-error{position:relative}
+    .sc-logic-error{position:absolute;top:8px;left:8px;z-index:2147483647;max-width:60ch;
+      padding:6px 10px;background:#b00020;color:#fff;font:12px/1.4 ui-monospace,monospace;
+      border-radius:4px;white-space:pre-wrap;pointer-events:none}
+    /* Mirrors PRINT_BASELINE_CSS in apps/web deck-stage-export.ts \u2014 keep both
+       in sync until dc-runtime regains a build step. */
+    @media print {
+      @page { margin: 0.5cm; }
+      figure, table { break-inside: avoid; }
+      #dc-root, #dc-root > .sc-host { height: auto; }
+      *, *::before, *::after {
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+        backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+        animation-delay: -99s !important; animation-duration: .001s !important;
+        animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+        animation-play-state: running !important; transition-duration: 0s !important;
+      }
+    }
+  `;
+  var FULL_PAGE_CSS = "html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}";
+  function rootNameForDocument(doc, loc) {
+    let bootPath = loc.pathname || "";
+    if (!/\.dc\.html?$/i.test(safeDecode(bootPath))) {
+      try {
+        bootPath = new URL(doc.baseURI || "/").pathname;
+      } catch {
+      }
+    }
+    return dcNameFromPath(bootPath);
+  }
+  function safeDecode(s) {
+    try {
+      return decodeURIComponent(s);
+    } catch {
+      return s;
+    }
+  }
+  function boot(runtime, doc = document) {
+    const parsed = parseDcDocument(doc);
+    if (!parsed) return null;
+    const React = getReact();
+    const rootName = rootNameForDocument(doc, location);
+    runtime.markFetched(rootName);
+    runtime.setRootName(rootName);
+    runtime.adoptParsed(rootName, parsed);
+    if (!window.__resources) {
+      fetch(location.href).then((res) => res.ok ? res.text() : "").then((t) => {
+        const raw = t ? parseDcText(t) : null;
+        if (raw?.template) runtime.updateHtml(rootName, raw.template);
+      }).catch(() => {
+      });
+    }
+    const dc = doc.querySelector("x-dc");
+    const hostEl = doc.createElement("div");
+    hostEl.id = "dc-root";
+    dc.replaceWith(hostEl);
+    if (!parsed.preview) {
+      const s = doc.createElement("style");
+      s.textContent = FULL_PAGE_CSS;
+      doc.head.appendChild(s);
+    }
+    const Root = runtime.getDC(rootName);
+    const entry = runtime.registry.get(rootName);
+    function StandaloneRoot() {
+      const [, setTick] = React.useState(0);
+      React.useEffect(() => {
+        const sub = () => setTick((n) => n + 1);
+        entry.subs.add(sub);
+        return () => {
+          entry.subs.delete(sub);
+        };
+      }, []);
+      const defaults = React.useMemo(() => {
+        const d = {};
+        for (const k in entry.propsMeta || {}) {
+          const v = entry.propsMeta?.[k]?.default;
+          if (v !== void 0) d[k] = v;
+        }
+        return d;
+      }, [entry.propsMeta]);
+      return h(Root, { ...defaults, ...entry.propOverrides || {} });
+    }
+    const ReactDOM = getReactDOM();
+    if (ReactDOM.createRoot)
+      ReactDOM.createRoot(hostEl).render(h(StandaloneRoot));
+    else ReactDOM.render(h(StandaloneRoot), hostEl);
+    return rootName;
+  }
+
+  // src/expr.ts
+  var IDENT_RE = /^[A-Za-z_$][A-Za-z0-9_$]*/;
+  var NUMBER_RE = /^-?\d+(\.\d+)?$/;
+  function resolve(vals, src) {
+    const expr = String(src).trim();
+    if (!expr) return void 0;
+    if (expr[0] === "(" && expr[expr.length - 1] === ")" && parensWrapWhole(expr)) {
+      return resolve(vals, expr.slice(1, -1));
+    }
+    const eq = findTopLevelEquality(expr);
+    if (eq) {
+      const lv = resolve(vals, expr.slice(0, eq.index));
+      const rv = resolve(vals, expr.slice(eq.index + eq.op.length));
+      switch (eq.op) {
+        case "===":
+          return lv === rv;
+        case "!==":
+          return lv !== rv;
+        case "==":
+          return lv == rv;
+        default:
+          return lv != rv;
+      }
+    }
+    if (expr[0] === "!") return !resolve(vals, expr.slice(1));
+    if (expr === "true") return true;
+    if (expr === "false") return false;
+    if (expr === "null") return null;
+    if (expr === "undefined") return void 0;
+    if (NUMBER_RE.test(expr)) return Number(expr);
+    if (expr.length >= 2 && (expr[0] === '"' || expr[0] === "'") && expr[expr.length - 1] === expr[0]) {
+      return expr.slice(1, -1);
+    }
+    return resolvePath(vals, expr);
+  }
+  function parensWrapWhole(expr) {
+    let depth = 0;
+    for (let i = 0; i < expr.length - 1; i++) {
+      if (expr[i] === "(") depth++;
+      else if (expr[i] === ")") {
+        depth--;
+        if (depth === 0) return false;
+      }
+    }
+    return true;
+  }
+  function findTopLevelEquality(expr) {
+    let depth = 0;
+    for (let i = 0; i < expr.length; i++) {
+      const c = expr[i];
+      if (c === "[" || c === "(") depth++;
+      else if (c === "]" || c === ")") depth--;
+      else if (depth === 0 && (c === "=" || c === "!") && expr[i + 1] === "=") {
+        if (i > 0 && (expr[i - 1] === "=" || expr[i - 1] === "!")) continue;
+        if (!expr.slice(0, i).trim()) continue;
+        const op = expr[i + 2] === "=" ? c + "==" : c + "=";
+        return { index: i, op };
+      }
+    }
+    return null;
+  }
+  function resolvePath(vals, expr) {
+    const head = expr.match(IDENT_RE);
+    if (!head) return void 0;
+    let cur = vals == null ? void 0 : vals[head[0]];
+    let i = head[0].length;
+    while (i < expr.length) {
+      if (expr[i] === ".") {
+        const m = expr.slice(i + 1).match(IDENT_RE) || expr.slice(i + 1).match(/^\d+/);
+        if (!m) return void 0;
+        cur = cur == null ? void 0 : cur[m[0]];
+        i += 1 + m[0].length;
+      } else if (expr[i] === "[") {
+        let depth = 1;
+        let j = i + 1;
+        while (j < expr.length && depth > 0) {
+          if (expr[j] === "[") depth++;
+          else if (expr[j] === "]") {
+            depth--;
+            if (depth === 0) break;
+          }
+          j++;
+        }
+        if (depth !== 0) return void 0;
+        const key = resolve(vals, expr.slice(i + 1, j));
+        cur = cur == null ? void 0 : cur[key];
+        i = j + 1;
+      } else {
+        return void 0;
+      }
+    }
+    return cur;
+  }
+
+  // src/encode.ts
+  var CAMEL_ATTR = "sc-camel-";
+  var INLINE_TEXT_TAGS = new Set(
+    "a abbr b bdi bdo br cite code del dfn em i ins kbd mark q s samp small span strike strong sub sup u var wbr".split(
+      " "
+    )
+  );
+  var RAW_WRAP = {
+    select: "sc-raw-select",
+    table: "sc-raw-table",
+    tbody: "sc-raw-tbody",
+    thead: "sc-raw-thead",
+    tfoot: "sc-raw-tfoot",
+    tr: "sc-raw-tr",
+    td: "sc-raw-td",
+    th: "sc-raw-th",
+    caption: "sc-raw-caption"
+  };
+  var RAW_UNWRAP = Object.fromEntries(
+    Object.entries(RAW_WRAP).map(([k, v]) => [v, k])
+  );
+  var EVENT_MAP = {
+    onclick: "onClick",
+    onchange: "onChange",
+    oninput: "onInput",
+    onsubmit: "onSubmit",
+    onkeydown: "onKeyDown",
+    onkeyup: "onKeyUp",
+    onkeypress: "onKeyPress",
+    onmousedown: "onMouseDown",
+    onmouseup: "onMouseUp",
+    onmouseenter: "onMouseEnter",
+    onmouseleave: "onMouseLeave",
+    onfocus: "onFocus",
+    onblur: "onBlur",
+    ondoubleclick: "onDoubleClick",
+    oncontextmenu: "onContextMenu",
+    onmousemove: "onMouseMove",
+    onmouseover: "onMouseOver",
+    onmouseout: "onMouseOut",
+    onpointerdown: "onPointerDown",
+    onpointerup: "onPointerUp",
+    onpointermove: "onPointerMove",
+    onpointerenter: "onPointerEnter",
+    onpointerleave: "onPointerLeave",
+    onpointercancel: "onPointerCancel",
+    onpointerover: "onPointerOver",
+    onpointerout: "onPointerOut",
+    ongotpointercapture: "onGotPointerCapture",
+    onlostpointercapture: "onLostPointerCapture",
+    ontouchstart: "onTouchStart",
+    ontouchend: "onTouchEnd",
+    ontouchmove: "onTouchMove",
+    ontouchcancel: "onTouchCancel",
+    ondragstart: "onDragStart",
+    ondragend: "onDragEnd",
+    ondragenter: "onDragEnter",
+    ondragleave: "onDragLeave",
+    ondragover: "onDragOver",
+    onanimationstart: "onAnimationStart",
+    onanimationend: "onAnimationEnd",
+    onanimationiteration: "onAnimationIteration",
+    ontransitionend: "onTransitionEnd"
+  };
+  var ATTRS = `(?:[^>"']|"[^"]*"|'[^']*')*`;
+  var IMPORT_SELF_CLOSE_RE = new RegExp(
+    "<(x-import|dc-import)(" + ATTRS + ")/>",
+    "gi"
+  );
+  var CAMEL_ATTR_RE = /(\s)([a-z]+[A-Z][A-Za-z0-9]*)(\s*=)/g;
+  function encodeCamelAttrs(html) {
+    return html.replace(
+      CAMEL_ATTR_RE,
+      (_, sp, name, eq) => sp + CAMEL_ATTR + name.replace(/[A-Z]/g, (c) => "-" + c.toLowerCase()) + eq
+    );
+  }
+  function encodeCase(html) {
+    html = html.replace(
+      IMPORT_SELF_CLOSE_RE,
+      (_, t, a) => "<" + t + a + "></" + t + ">"
+    );
+    html = html.replace(/<helmet(\s|>)/gi, "<sc-helmet$1");
+    html = html.replace(/<\/helmet\s*>/gi, "</sc-helmet>");
+    html = encodeCamelAttrs(html);
+    for (const [real, alias] of Object.entries(RAW_WRAP)) {
+      html = html.replace(
+        new RegExp("(</?)" + real + "(?=[\\s>])", "gi"),
+        "$1" + alias
+      );
+    }
+    return html;
+  }
+  function kebabToCamel(s) {
+    return s.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+  }
+  function cssToObj(css) {
+    const o = {};
+    for (const decl of css.split(";")) {
+      const i = decl.indexOf(":");
+      if (i < 0) continue;
+      const prop = decl.slice(0, i).trim();
+      o[prop.startsWith("--") ? prop : kebabToCamel(prop)] = decl.slice(i + 1).trim();
+    }
+    return o;
+  }
+  function compileAttr(raw) {
+    const whole = raw.match(/^\s*\{\{([\s\S]+?)\}\}\s*$/);
+    if (whole) {
+      const path = whole[1];
+      return (vals) => resolve(vals, path);
+    }
+    if (raw.includes("{{")) {
+      const parts = raw.split(/\{\{([\s\S]+?)\}\}/g);
+      return (vals) => parts.map((s, i) => i & 1 ? resolve(vals, s) ?? "" : s).join("");
+    }
+    return () => raw;
+  }
+
+  // src/compile.ts
+  function collectProps(node, kind, host) {
+    const propGetters = [];
+    const pseudoClasses = [];
+    let hintSize = null;
+    for (const { name, value } of [...node.attributes]) {
+      if (name === "sc-name" || name === "data-dc-tpl") continue;
+      let key = name;
+      if (key.startsWith(CAMEL_ATTR))
+        key = kebabToCamel(key.slice(CAMEL_ATTR.length));
+      if (key === "hint-size") {
+        hintSize = value;
+        continue;
+      }
+      if (key.startsWith("style-")) {
+        pseudoClasses.push(host.pseudoClass(key.slice(6), value));
+        continue;
+      }
+      if (kind !== "dom") {
+        if (key.includes("-") && !(kind === "x-import" && (key.startsWith("aria-") || key.startsWith("data-"))))
+          key = kebabToCamel(key);
+      } else {
+        if (key === "class") key = "className";
+        else if (key === "for") key = "htmlFor";
+        else if (key.startsWith("on"))
+          key = EVENT_MAP[key] || "on" + key[2].toUpperCase() + key.slice(3);
+      }
+      propGetters.push([key, compileAttr(value)]);
+    }
+    return { propGetters, pseudoClasses, hintSize };
+  }
+  var HOST_STYLE_PROPS = /* @__PURE__ */ new Set([
+    "position",
+    "left",
+    "right",
+    "top",
+    "bottom",
+    "inset",
+    "width",
+    "height",
+    "z-index",
+    "transform"
+  ]);
+  function hostPositionStyle(style) {
+    const all = typeof style === "string" ? cssToObj(style) : style != null && typeof style === "object" ? style : null;
+    if (!all) return void 0;
+    const out = {};
+    for (const [k, v] of Object.entries(all)) {
+      const kebab = k.replace(/[A-Z]/g, (c) => "-" + c.toLowerCase());
+      if (HOST_STYLE_PROPS.has(kebab)) out[k] = v;
+    }
+    return Object.keys(out).length ? out : void 0;
+  }
+  function compileTemplate(html, host) {
+    const tpl = document.createElement("template");
+    //! nosemgrep: direct-inner-html-assignment
+    tpl.innerHTML = encodeCase(html);
+    let tplN = 0;
+    (function stamp(node) {
+      if (node.nodeType === Node.ELEMENT_NODE) {
+        node.setAttribute("data-dc-tpl", String(tplN++));
+      }
+      for (const c of node.childNodes) stamp(c);
+    })(tpl.content);
+    const builders = walkChildren(tpl.content, host);
+    const render = ((vals, ctx) => builders.map((b, i) => b(vals || {}, ctx, i)));
+    render.__annotated = tpl.innerHTML;
+    return render;
+  }
+  function walkChildren(node, host) {
+    return [...node.childNodes].map((c) => walk(c, host)).filter((b) => b != null);
+  }
+  var SLIDE_ID_VALUE_RE = /^[0-9a-f]{8}$/;
+  var DECK_CONTROL_FLOW_RE = /^(sc-if|sc-for|sc-else|dc-import|x-import)$/;
+  var DECK_AUX_RE = /^(template|script|style|sc-helmet|helmet)$/;
+  function isDeckMountTag(el) {
+    if (el.localName === "deck-stage") return true;
+    return el.localName === "x-import" && (el.getAttribute("component-from-global-scope") || "") === "deck-stage";
+  }
+  function walkDeckChildren(el, host) {
+    const pairs = [...el.childNodes].map((c) => ({ c, b: walk(c, host) })).filter((p) => p.b !== null);
+    const kids = pairs.map((p) => p.b);
+    const seen = /* @__PURE__ */ new Set();
+    const wsSeen = /* @__PURE__ */ new Map();
+    const keys = [];
+    const nextSlideId = new Array(pairs.length);
+    {
+      let upcoming = null;
+      for (let j = pairs.length - 1; j >= 0; j--) {
+        const n = pairs[j].c;
+        if (n.nodeType === Node.ELEMENT_NODE) {
+          const t = n.localName;
+          upcoming = !DECK_AUX_RE.test(t) && !DECK_CONTROL_FLOW_RE.test(t) ? n.getAttribute("data-om-slide-id") : null;
+        }
+        nextSlideId[j] = upcoming;
+      }
+    }
+    for (let j = 0; j < pairs.length; j++) {
+      const { c } = pairs[j];
+      if (c.nodeType === Node.TEXT_NODE) {
+        if ((c.nodeValue ?? "").trim() === "") {
+          const base = nextSlideId[j] ? "omid-ws:" + nextSlideId[j] : "omid-ws:aux";
+          const n = wsSeen.get(base) ?? 0;
+          wsSeen.set(base, n + 1);
+          keys.push(n === 0 ? base : base + ":" + n);
+          continue;
+        }
+        return { kids, keys: null };
+      }
+      if (c.nodeType !== Node.ELEMENT_NODE) {
+        keys.push(j);
+        continue;
+      }
+      const child = c;
+      const tag = child.localName;
+      if (DECK_AUX_RE.test(tag)) {
+        keys.push(j);
+        continue;
+      }
+      if (DECK_CONTROL_FLOW_RE.test(tag)) return { kids, keys: null };
+      const v = child.getAttribute("data-om-slide-id");
+      if (!v || !SLIDE_ID_VALUE_RE.test(v) || seen.has(v)) {
+        return { kids, keys: null };
+      }
+      seen.add(v);
+      keys.push("omid:" + v);
+    }
+    return { kids, keys };
+  }
+  function renderDeckKids(kids, kidKeys, vals, ctx) {
+    return kids.map((b, j) => {
+      const k = kidKeys ? kidKeys[j] : j;
+      const out = b(vals, ctx, k);
+      return kidKeys != null && typeof out === "string" ? h(getReact().Fragment, { key: k }, out) : out;
+    });
+  }
+  function walk(node, host) {
+    if (node.nodeType === Node.TEXT_NODE) return walkText(node);
+    if (node.nodeType !== Node.ELEMENT_NODE) return null;
+    const el = node;
+    const tag = el.tagName.toLowerCase();
+    if (tag === "sc-for") return walkFor(el, host);
+    if (tag === "sc-if") return walkIf(el, host);
+    if (tag === "x-import") return walkXImport(el, host);
+    if (tag === "sc-helmet") return host.helmet(el);
+    if (tag === "dc-import") return walkComponent(el, host);
+    return walkElement(el, host);
+  }
+  var warnedHoles = /* @__PURE__ */ new Set();
+  function warnUnresolved(ctx, what) {
+    const key = (ctx?.__name || "?") + "\0" + what;
+    if (warnedHoles.has(key)) return;
+    warnedHoles.add(key);
+    console.warn("[dc-runtime] " + (ctx?.__name || "template") + ": " + what);
+  }
+  function walkText(node) {
+    const txt = node.nodeValue ?? "";
+    if (!txt.includes("{{")) {
+      if (!txt.trim() && !txt.includes(" ")) return null;
+      return () => txt;
+    }
+    const parts = txt.split(/\{\{([\s\S]+?)\}\}/g);
+    return (vals, ctx, key) => h(
+      getReact().Fragment,
+      { key },
+      ...parts.map((p, i) => {
+        if (!(i & 1)) return p;
+        const v = resolve(vals, p);
+        if (v === void 0) {
+          if (!ctx?.__streamingNow) {
+            if (document.body?.hasAttribute("data-dc-editor-on")) {
+              return h(
+                "span",
+                { key: i, className: "sc-interp sc-unresolved" },
+                "{{ " + p.trim() + " }}"
+              );
+            }
+            warnUnresolved(
+              ctx,
+              "{{ " + p.trim() + " }} never resolved \u2014 rendered as empty"
+            );
+            return null;
+          }
+          return h(
+            "span",
+            { key: i, className: "sc-interp sc-missing" },
+            p.trim()
+          );
+        }
+        if (getReact().isValidElement(v) || Array.isArray(v)) {
+          return h(getReact().Fragment, { key: i }, v);
+        }
+        if (v === null || typeof v === "boolean") return null;
+        return h("span", { key: i, className: "sc-interp" }, String(v));
+      })
+    );
+  }
+  function walkFor(el, host) {
+    const listGet = compileAttr(el.getAttribute("list") || "");
+    const asName = el.getAttribute("as") || "item";
+    const hintN = parseInt(el.getAttribute("hint-placeholder-count") || "0", 10);
+    const kids = walkChildren(el, host);
+    const listSrc = el.getAttribute("list") || "";
+    return (vals, ctx, key) => {
+      let list = listGet(vals);
+      if (!Array.isArray(list)) {
+        if (!ctx?.__streamingNow) {
+          if (list !== void 0 && list !== null) {
+            warnUnresolved(
+              ctx,
+              'sc-for list="' + listSrc + '" is not an array (' + typeof list + ")"
+            );
+          }
+          list = [];
+        } else {
+          list = hintN > 0 ? Array(hintN).fill(void 0) : [];
+        }
+      }
+      return h(
+        getReact().Fragment,
+        { key },
+        list.map((item, i) => {
+          const sub = { ...vals, [asName]: item, $index: i };
+          return h(
+            getReact().Fragment,
+            { key: i },
+            kids.map((b, j) => b(sub, ctx, j))
+          );
+        })
+      );
+    };
+  }
+  function walkIf(el, host) {
+    const valGet = compileAttr(el.getAttribute("value") || "");
+    const hintRaw = el.getAttribute("hint-placeholder-val");
+    const hintGet = hintRaw != null ? compileAttr(hintRaw) : null;
+    const kids = walkChildren(el, host);
+    return (vals, ctx, key) => {
+      let v = valGet(vals);
+      if (v === void 0 && hintGet && ctx?.__streamingNow) v = hintGet(vals);
+      return v ? h(
+        getReact().Fragment,
+        { key },
+        kids.map((b, j) => b(vals, ctx, j))
+      ) : null;
+    };
+  }
+  function walkComponent(el, host) {
+    const name = el.getAttribute("name") || el.getAttribute("component") || "";
+    el.removeAttribute("name");
+    el.removeAttribute("component");
+    const tplId = el.getAttribute("data-dc-tpl");
+    const styleRaw = el.getAttribute("style");
+    el.removeAttribute("style");
+    const styleGet = styleRaw != null ? compileAttr(styleRaw) : null;
+    const { propGetters, hintSize } = collectProps(el, "dc-import", host);
+    const kids = walkChildren(el, host);
+    return (vals, ctx, key) => {
+      const props = {
+        key,
+        __hintSize: hintSize,
+        __tplId: tplId,
+        __hostStyle: styleGet ? hostPositionStyle(styleGet(vals)) : void 0
+      };
+      for (const [k, g] of propGetters) {
+        const v = g(vals);
+        if (k === "dcProps") {
+          if (v && typeof v === "object") Object.assign(props, v);
+          continue;
+        }
+        props[k] = v;
+      }
+      if (kids.length) props.children = kids.map((b, j) => b(vals, ctx, j));
+      return h(host.component(name), props);
+    };
+  }
+  function walkXImport(el, host) {
+    const globalNameGet = compileAttr(
+      el.getAttribute("component-from-global-scope") || ""
+    );
+    const exportNameGet = compileAttr(
+      el.getAttribute("component") || el.getAttribute("name") || ""
+    );
+    const fromRaw = el.getAttribute("from") || (el.getAttribute("component-from-global-scope") ? "" : el.getAttribute("src") || el.getAttribute("import") || "");
+    const urls = fromRaw.trim() ? fromRaw.trim().split(/\s+/) : [];
+    const url = urls.length ? urls[urls.length - 1] : "";
+    const kindOf = (u) => /\.(jsx|tsx)(\?|#|$)/i.test(u) ? "jsx" : "js";
+    const tplId = el.getAttribute("data-dc-tpl");
+    const styleRaw = el.getAttribute("style");
+    el.removeAttribute("style");
+    const styleGet = styleRaw != null ? compileAttr(styleRaw) : null;
+    const wrap = tplId != null || styleGet != null;
+    const { propGetters, hintSize } = collectProps(el, "x-import", host);
+    const hasContent = el.children.length > 0 || !!(el.textContent || "").trim();
+    const deckKeyed = hasContent && isDeckMountTag(el) ? walkDeckChildren(el, host) : null;
+    const kids = deckKeyed ? deckKeyed.kids : hasContent ? walkChildren(el, host) : [];
+    const kidKeys = deckKeyed?.keys ?? null;
+    const urlBindable = fromRaw.includes("{{");
+    if (urls.length && !urlBindable) {
+      let prev;
+      for (const u of urls) prev = host.loadExternal(kindOf(u), u, prev);
+    }
+    const evalName = (g, vals) => {
+      const v = g(vals);
+      const s = v == null ? "" : String(v);
+      return s.includes("{{") ? "" : s;
+    };
+    return (vals, ctx, key) => {
+      const globalName = evalName(globalNameGet, vals);
+      const name = globalName || evalName(exportNameGet, vals);
+      const C = !name || urlBindable ? null : globalName ? host.resolveExternalGlobal(url, globalName) : host.resolveExternal(url, name);
+      const hostStyle = styleGet ? hostPositionStyle(styleGet(vals)) : void 0;
+      const wrapper = wrap ? {
+        key,
+        className: "sc-host-x",
+        "data-dc-tpl": tplId,
+        style: hostStyle || { display: "contents" }
+      } : null;
+      if (!C) {
+        const error = urlBindable ? "x-import `from` cannot contain {{ \u2026 }} \u2014 module URLs are resolved at parse time; use a literal URL" : host.resolveExternalError(url, name);
+        const ph = host.placeholder({
+          key: wrapper ? void 0 : key,
+          name,
+          hintSize,
+          error
+        });
+        return wrapper ? h("div", wrapper, ph) : ph;
+      }
+      const props = wrapper ? {} : { key };
+      let unresolvedHole = false;
+      for (const [k, g] of propGetters) {
+        if (k === "component" || k === "componentFromGlobalScope" || k === "from") {
+          continue;
+        }
+        const v = g(vals);
+        if (v === void 0) unresolvedHole = true;
+        if (k === "dcProps") {
+          if (v && typeof v === "object") Object.assign(props, v);
+          continue;
+        }
+        props[k] = v;
+      }
+      if (unresolvedHole && ctx?.__htmlStreamingNow) {
+        const ph = host.placeholder({
+          key: wrapper ? void 0 : key,
+          name,
+          hintSize,
+          error: null
+        });
+        return wrapper ? h("div", wrapper, ph) : ph;
+      }
+      if (kids.length) {
+        props.children = renderDeckKids(kids, kidKeys, vals, ctx);
+      }
+      return wrapper ? h("div", wrapper, h(C, props)) : h(C, props);
+    };
+  }
+  function contentKey(el) {
+    const clone = el.cloneNode(true);
+    for (const d of clone.querySelectorAll("*")) {
+      while (d.attributes.length) d.removeAttribute(d.attributes[0].name);
+    }
+    const s = clone.innerHTML;
+    let h2 = 5381;
+    for (let i = 0; i < s.length; i++) h2 = (h2 << 5) + h2 + s.charCodeAt(i) | 0;
+    return s.length + "." + (h2 >>> 0).toString(36);
+  }
+  var NEVER_CONTENT_KEYED = new Set(
+    "script style textarea option title select canvas iframe video audio".split(
+      " "
+    )
+  );
+  var NOT_INLINE_SELECTOR = ":not(" + [...INLINE_TEXT_TAGS].join(",") + ")";
+  function walkElement(el, host) {
+    const realTag = RAW_UNWRAP[el.localName] || el.localName;
+    const tplId = el.getAttribute("data-dc-tpl");
+    const inlineOnly = el.childNodes.length > 0 && !NEVER_CONTENT_KEYED.has(realTag) && el.querySelector(NOT_INLINE_SELECTOR) === null;
+    const keySuffix = inlineOnly ? "|" + contentKey(el) : "";
+    const { propGetters, pseudoClasses } = collectProps(el, "dom", host);
+    const deckKeyed = isDeckMountTag(el) ? walkDeckChildren(el, host) : null;
+    const kids = deckKeyed ? deckKeyed.kids : walkChildren(el, host);
+    const kidKeys = deckKeyed?.keys ?? null;
+    return (vals, ctx, key) => {
+      const props = {
+        key: key + keySuffix,
+        "data-dc-tpl": tplId
+      };
+      for (const [k, g] of propGetters) {
+        let v = g(vals);
+        if (k === "style" && typeof v === "string") v = cssToObj(v);
+        if ((k === "value" || k === "checked") && v === void 0) {
+          v = k === "checked" ? false : "";
+        }
+        props[k] = v;
+      }
+      if (pseudoClasses.length) {
+        props.className = [props.className, ...pseudoClasses].filter(Boolean).join(" ");
+      }
+      return h(realTag, props, ...renderDeckKids(kids, kidKeys, vals, ctx));
+    };
+  }
+
+  // src/logic.ts
+  var StreamableLogic = class {
+    constructor(props) {
+      __publicField(this, "props");
+      __publicField(this, "state", {});
+      /** Back-pointer to the wrapper component, installed after construction. */
+      __publicField(this, "__host");
+      this.props = props || {};
+    }
+    setState(update, cb) {
+      this.__host && this.__host.__setLogicState(update, cb);
+    }
+    forceUpdate() {
+      this.__host && this.__host.forceUpdate();
+    }
+    componentDidMount() {
+    }
+    componentDidUpdate(_prevProps) {
+    }
+    componentWillUnmount() {
+    }
+    /** The flat object the template renders against (merged over props). */
+    renderVals() {
+      return {};
+    }
+  };
+  function evalDcLogic(src) {
+    //! nosemgrep: eval-and-function-constructor
+    const fn = new Function(
+      "DCLogic",
+      "StreamableLogic",
+      "React",
+      src + '\n;return (typeof Component!=="undefined"&&Component)||undefined;'
+    );
+    return fn(StreamableLogic, StreamableLogic, getReact());
+  }
+
+  // src/component.ts
+  function shallowEqual(a, b) {
+    if (!b) return false;
+    const ak = Object.keys(a).filter((k) => k !== "children");
+    const bk = Object.keys(b).filter((k) => k !== "children");
+    if (ak.length !== bk.length) return false;
+    for (const k of ak) if (a[k] !== b[k]) return false;
+    return true;
+  }
+  function Placeholder({
+    name,
+    hintSize,
+    streaming,
+    error
+  }) {
+    const [w, hgt] = (hintSize || "100%,60px").split(",");
+    return h(
+      "div",
+      {
+        className: "sc-placeholder" + (streaming ? " sc-streaming" : ""),
+        style: { width: w.trim(), height: hgt && hgt.trim() },
+        title: name
       },
-      openThesis: () => this.open('thesis'),
-      openRerank: () => this.open('rerank'),
-      openKgdpo: () => this.open('kgdpo'),
-      openGui: () => this.open('gui'),
-      toggleTheme: () => {
-        const next = (this.state.theme === 'light') ? 'dark' : 'light';
-        this.applyTheme(next);
-        this.setState({ theme: next });
+      error ? h(
+        "div",
+        { className: "sc-placeholder-error" },
+        (name ? name + ": " : "") + error
+      ) : null
+    );
+  }
+  function hintToMin(hint) {
+    if (!hint) return void 0;
+    const [w, hgt] = hint.split(",");
+    return { minWidth: w.trim(), minHeight: hgt && hgt.trim() };
+  }
+  function createComponentFactory(registry, ensureFetched) {
+    const React = getReact();
+    const AncestorContext = React.createContext([]);
+    class StreamableComponent extends React.Component {
+      constructor(props) {
+        super(props);
+        __publicField(this, "__name");
+        __publicField(this, "__sub");
+        __publicField(this, "__needsDidMount", false);
+        /** Snapshot of the registry's streaming flags taken at render time —
+         *  builders read it off the RenderCtx (this) to pick placeholder vs
+         *  render-nothing for unresolved values. */
+        __publicField(this, "__streamingNow", false);
+        __publicField(this, "__htmlStreamingNow", false);
+        /** When a construct throws, remember the (class, registry.ver, props)
+         *  triple so render-time reconcile doesn't re-attempt it on every parent
+         *  re-render. A registry bump (new class, template, external module
+         *  resolving via bumpAll) changes `ver` and breaks the memo so an
+         *  env-dependent constructor can self-heal. */
+        __publicField(this, "__failedLogic", null);
+        __publicField(this, "__failedUserProps", null);
+        __publicField(this, "__failedVer", -1);
+        /** Per-instance constructor error — kept here (not on the registry entry)
+         *  so one instance's successful construct can't hide a sibling's failure,
+         *  and a construct can never wipe an eval error `updateJs` recorded on
+         *  `r.logicError`. */
+        __publicField(this, "__ctorError", null);
+        __publicField(this, "logic");
+        this.__name = props.__name;
+        this.state = { __v: 0, __err: null };
+        this.__sub = () => {
+          if (this.state.__err) this.setState({ __err: null });
+          this.forceUpdate();
+        };
+        this.__makeLogic(registry.get(this.__name).Logic, null);
+        ensureFetched(this.__name);
+      }
+      /** Error-boundary hook: a render crash anywhere in this DC's subtree
+       *  (its own template, an x-import'd component, a child DC without its
+       *  own deeper boundary) lands here instead of unmounting the page. */
+      static getDerivedStateFromError(e) {
+        return { __err: e instanceof Error && e.message ? e.message : String(e) };
+      }
+      componentDidCatch(e, info) {
+        console.error(
+          "[dc-runtime] render error in <" + this.__name + ">:",
+          e,
+          info?.componentStack || ""
+        );
+      }
+      /** Instantiate the logic class (or the no-op base) and adopt `prevState`
+       *  over its initial state — used both at mount and on hot-swap. */
+      __makeLogic(Logic, prevState) {
+        const L = Logic || StreamableLogic;
+        try {
+          this.logic = new L(this.__userProps());
+          this.__failedLogic = null;
+          this.__failedUserProps = null;
+          this.__ctorError = null;
+        } catch (e) {
+          console.error(e);
+          this.__failedLogic = Logic;
+          this.__failedUserProps = this.__userProps();
+          this.__failedVer = registry.get(this.__name).ver;
+          this.__ctorError = this.__name + ": " + (e instanceof Error && e.message ? e.message : String(e));
+          this.logic = new StreamableLogic(
+            this.__userProps()
+          );
+        }
+        this.logic.__host = this;
+        if (prevState)
+          this.logic.state = { ...this.logic.state || {}, ...prevState };
+      }
+      /** The props the author's logic + template see — internal __-prefixed
+       *  wiring stripped. */
+      __userProps() {
+        const { __name, __hintSize, __tplId, __hostStyle, ...rest } = this.props;
+        return rest;
+      }
+      __setLogicState(update, cb) {
+        const prev = this.logic.state;
+        const patch = typeof update === "function" ? update(prev) : update;
+        this.logic.state = { ...prev, ...patch };
+        this.setState((s) => ({ __v: s.__v + 1 }), cb);
+      }
+      /** Swap the logic instance when the registry's Logic class changed
+       *  (streaming completion, hot reload). State carries over; didMount
+       *  re-fires after the swap commits so refs exist. */
+      __reconcileLogic() {
+        const r = registry.get(this.__name);
+        const Next = r.Logic;
+        const Cur = this.logic.constructor;
+        if (Next === Cur || !Next && Cur === StreamableLogic || Next === this.__failedLogic && r.ver === this.__failedVer && shallowEqual(this.__userProps(), this.__failedUserProps)) {
+          return;
+        }
+        if (!this.__needsDidMount) {
+          try {
+            this.logic.componentWillUnmount();
+          } catch (e) {
+            console.error(e);
+          }
+        }
+        this.__makeLogic(Next, this.logic.state);
+        this.__needsDidMount = true;
+      }
+      componentDidMount() {
+        registry.get(this.__name).subs.add(this.__sub);
+        try {
+          this.logic.componentDidMount();
+        } catch (e) {
+          console.error(e);
+        }
+      }
+      componentDidUpdate(prevProps) {
+        this.logic.props = this.__userProps();
+        if (this.__needsDidMount) {
+          if (this.state.__err || !registry.get(this.__name).tpl) return;
+          this.__needsDidMount = false;
+          try {
+            this.logic.componentDidMount();
+          } catch (e) {
+            console.error(e);
+          }
+        } else {
+          try {
+            this.logic.componentDidUpdate(prevProps);
+          } catch (e) {
+            console.error(e);
+          }
+        }
+      }
+      componentWillUnmount() {
+        registry.get(this.__name).subs.delete(this.__sub);
+        if (!this.__needsDidMount) {
+          try {
+            this.logic.componentWillUnmount();
+          } catch (e) {
+            console.error(e);
+          }
+        }
+      }
+      render() {
+        const r = registry.get(this.__name);
+        const cls = "sc-host" + (r.htmlStreaming ? " sc-streaming-html" : "") + (r.jsStreaming ? " sc-streaming-js" : "");
+        const hintStyle = r.htmlStreaming ? hintToMin(this.props.__hintSize) : void 0;
+        const hostStyle = this.props.__hostStyle || hintStyle ? { ...hintStyle || {}, ...this.props.__hostStyle || {} } : void 0;
+        const hostBase = {
+          className: cls,
+          style: hostStyle,
+          "data-sc-name": this.__name,
+          "data-dc-tpl": this.props.__tplId
+        };
+        const chain = Array.isArray(this.context) ? this.context : [];
+        if (chain.includes(this.__name)) {
+          const cycle = [
+            ...chain.slice(chain.indexOf(this.__name)),
+            this.__name
+          ].join(" \u2192 ");
+          return h(
+            "div",
+            { ...hostBase, className: cls + " sc-has-error" },
+            h(Placeholder, {
+              name: this.__name,
+              hintSize: this.props.__hintSize,
+              error: "circular import: " + cycle
+            })
+          );
+        }
+        if (this.state.__err) {
+          return h(
+            "div",
+            { ...hostBase, className: cls + " sc-has-error" },
+            h(
+              "div",
+              { className: "sc-logic-error", "data-omelette-chrome": "" },
+              this.__name + ": " + this.state.__err
+            ),
+            h(Placeholder, {
+              name: this.__name,
+              hintSize: this.props.__hintSize,
+              error: this.state.__err
+            })
+          );
+        }
+        this.__reconcileLogic();
+        if (!r.tpl) {
+          return h(
+            "div",
+            hostBase,
+            h(Placeholder, { name: this.__name, hintSize: this.props.__hintSize })
+          );
+        }
+        const userProps = this.__userProps();
+        this.logic.props = userProps;
+        let vals = userProps;
+        let renderErr = r.logicError || this.__ctorError;
+        try {
+          vals = { ...userProps, ...this.logic.renderVals() || {} };
+        } catch (e) {
+          console.error(e);
+          renderErr = this.__name + ".renderVals(): " + (e instanceof Error && e.message ? e.message : String(e));
+        }
+        this.__streamingNow = !!(r.htmlStreaming || r.jsStreaming);
+        this.__htmlStreamingNow = !!r.htmlStreaming;
+        return h(
+          "div",
+          { ...hostBase, className: cls + (renderErr ? " sc-has-error" : "") },
+          renderErr && h(
+            "div",
+            { className: "sc-logic-error", "data-omelette-chrome": "" },
+            renderErr
+          ),
+          h(
+            AncestorContext.Provider,
+            { value: [...chain, this.__name] },
+            r.tpl(vals, this)
+          )
+        );
+      }
+    }
+    __publicField(StreamableComponent, "contextType", AncestorContext);
+    const named = /* @__PURE__ */ new Map();
+    function getDC(name) {
+      const hit = named.get(name);
+      if (hit) return hit;
+      function Dispatcher(p) {
+        const [, setTick] = React.useState(0);
+        React.useEffect(() => {
+          const sub = () => setTick((n) => n + 1);
+          registry.get(name).subs.add(sub);
+          return () => {
+            registry.get(name).subs.delete(sub);
+          };
+        }, []);
+        ensureFetched(name);
+        return h(StreamableComponent, { ...p, __name: name });
+      }
+      Dispatcher.displayName = name;
+      named.set(name, Dispatcher);
+      return Dispatcher;
+    }
+    return {
+      getDC,
+      StreamableComponent
+    };
+  }
+
+  // src/bundled.ts
+  function bundledBlob(url) {
+    const blobs = window.__resourceBlobs;
+    const b = blobs ? blobs[url.split("#")[0]] : void 0;
+    return b instanceof Blob ? b : null;
+  }
+
+  // src/cdn.ts
+  var REACT_URL = "https://unpkg.com/react@18.3.1/umd/react.production.min.js";
+  var REACT_SRI = "sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z";
+  var REACT_DOM_URL = "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js";
+  var REACT_DOM_SRI = "sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1";
+  var BABEL_URL = "https://unpkg.com/@babel/standalone@7.29.0/babel.min.js";
+  var BABEL_SRI = "sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y";
+  function cdnScriptFor(url, sri) {
+    const res = window.__resources;
+    const v = res ? res[url] : void 0;
+    return typeof v === "string" && v ? { src: v } : { src: url, integrity: sri };
+  }
+
+  // src/external.ts
+  var isCustomElementName = (n) => !n.includes(".") && n.includes("-");
+  function isRenderableType(g) {
+    if (typeof g === "function") return !isElementClass(g);
+    return typeof g === "object" && g !== null && typeof g.$$typeof === "symbol";
+  }
+  function resolveDottedPath(root, name) {
+    let cur = root;
+    for (const seg of name.split(".")) {
+      if (cur == null) return void 0;
+      cur = cur[seg];
+    }
+    return cur;
+  }
+  var GLOBAL_POLL_INTERVAL_MS = 50;
+  var GLOBAL_POLL_TIMEOUT_MS = 3e4;
+  function createExternalModules(onResolved) {
+    const cache = /* @__PURE__ */ new Map();
+    let babelLoading = null;
+    const reportedMissing = /* @__PURE__ */ new Map();
+    const polling = /* @__PURE__ */ new Set();
+    function ensureBabel() {
+      if (window.Babel) return Promise.resolve();
+      if (babelLoading) return babelLoading;
+      const babel = cdnScriptFor(BABEL_URL, BABEL_SRI);
+      babelLoading = new Promise((res, rej) => {
+        const s = document.createElement("script");
+        s.src = babel.src;
+        if (babel.integrity) {
+          s.integrity = babel.integrity;
+          s.crossOrigin = "anonymous";
+        }
+        s.onload = () => res();
+        s.onerror = rej;
+        document.head.appendChild(s);
+      });
+      return babelLoading;
+    }
+    const pending = /* @__PURE__ */ new Map();
+    function load(kind, url, after) {
+      const existing = pending.get(url);
+      if (existing) return existing;
+      cache.set(url, null);
+      console.info("[dc-runtime] x-import: loading", url, "(" + kind + ")");
+      const ready = Promise.all([
+        kind === "jsx" ? ensureBabel() : Promise.resolve(),
+        after ?? Promise.resolve()
+      ]);
+      const p = ready.then(() => {
+        const pre = bundledBlob(url);
+        if (pre) return pre.text();
+        return fetch(url).then((r) => {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.text();
+        });
+      }).then((src) => {
+        const code = kind === "jsx" ? window.Babel.transform(src, {
+          filename: url,
+          presets: ["react", "typescript"]
+        }).code : src;
+        const module = { exports: {} };
+        const before = new Set(Object.keys(window));
+        //! nosemgrep: eval-and-function-constructor
+        new Function("React", "module", "exports", "require", code)(
+          getReact(),
+          module,
+          module.exports,
+          () => ({})
+        );
+        const globals = {};
+        for (const k of Object.keys(window)) {
+          if (!before.has(k) && typeof window[k] === "function") {
+            globals[k] = window[k];
+          }
+        }
+        cache.set(url, { mod: module.exports, globals });
+        console.info(
+          "[dc-runtime] x-import: loaded",
+          url,
+          "\u2014 exports:",
+          Object.keys(module.exports),
+          "window globals:",
+          Object.keys(globals)
+        );
+        onResolved();
+      }).catch((e) => {
+        cache.set(url, {
+          mod: {},
+          globals: {},
+          error: "failed to load: " + (e instanceof Error && e.message ? e.message : String(e))
+        });
+        console.error(
+          "[dc-runtime] x-import: FAILED to load",
+          url,
+          "(" + kind + ")",
+          e
+        );
+        onResolved();
+      });
+      pending.set(url, p);
+      return p;
+    }
+    function resolve2(url, name) {
+      const entry = cache.get(url);
+      if (!entry) return null;
+      const { mod, globals } = entry;
+      const C = mod && mod[name] || globals && globals[name] || typeof window !== "undefined" && window[name] || mod && mod.default;
+      if (typeof C === "function") return C;
+      const key = url + "\0" + name;
+      if (!reportedMissing.has(key)) {
+        reportedMissing.set(
+          key,
+          entry.error || 'no export named "' + name + '" (has: ' + Object.keys(mod).join(", ") + ")"
+        );
+        console.error(
+          "[dc-runtime] x-import: module",
+          url,
+          "loaded but has no component named",
+          JSON.stringify(name),
+          "\u2014 available exports:",
+          Object.keys(mod),
+          "window globals:",
+          Object.keys(globals),
+          ". The module must `module.exports = {" + name + "}` or set `window." + name + "`."
+        );
+      }
+      return null;
+    }
+    function waitForGlobal(name) {
+      if (polling.has(name)) return;
+      polling.add(name);
+      const started = Date.now();
+      const isCE = isCustomElementName(name);
+      const tick = () => {
+        const found = isCE ? customElements.get(name) : isRenderableType(resolveDottedPath(window, name));
+        if (found) {
+          polling.delete(name);
+          onResolved();
+          return;
+        }
+        if (Date.now() - started >= GLOBAL_POLL_TIMEOUT_MS) {
+          console.warn(
+            "[dc-runtime] x-import: global",
+            JSON.stringify(name),
+            "never appeared on window after " + GLOBAL_POLL_TIMEOUT_MS + "ms"
+          );
+          return;
+        }
+        setTimeout(tick, GLOBAL_POLL_INTERVAL_MS);
+      };
+      setTimeout(tick, GLOBAL_POLL_INTERVAL_MS);
+    }
+    function resolveGlobal(url, name) {
+      const isCE = isCustomElementName(name);
+      if (!url) {
+        if (isCE) {
+          if (customElements.get(name)) return name;
+          waitForGlobal(name);
+          return null;
+        }
+        const g2 = resolveDottedPath(window, name);
+        if (isRenderableType(g2)) return g2;
+        waitForGlobal(name);
+        return null;
+      }
+      const entry = cache.get(url);
+      if (!entry) return null;
+      if (isCE && customElements.get(name)) return name;
+      const g = entry.globals[name] ?? resolveDottedPath(window, name);
+      if (isRenderableType(g)) return g;
+      if (name.includes(".")) return null;
+      const key = url + "\0global\0" + name;
+      if (!reportedMissing.has(key)) {
+        reportedMissing.set(key, null);
+        if (isCE && !customElements.get(name)) {
+          console.warn(
+            "[dc-runtime] x-import:",
+            url,
+            "loaded but no custom element",
+            JSON.stringify(name),
+            "is registered and window." + name + " is not a function \u2014 rendering <" + name + "> as an unknown element."
+          );
+        }
+      }
+      return name;
+    }
+    function getError(url, name) {
+      const entry = cache.get(url);
+      if (entry?.error) return entry.error;
+      return reportedMissing.get(url + "\0" + name) || null;
+    }
+    return { load, resolve: resolve2, resolveGlobal, getError };
+  }
+  function isElementClass(g) {
+    try {
+      return typeof g === "function" && typeof HTMLElement !== "undefined" && g.prototype instanceof HTMLElement;
+    } catch {
+      return false;
+    }
+  }
+
+  // src/atomics.ts
+  var ATOMIC_CSS = (
+    // layout
+    ".fx{display:flex}.col{display:flex;flex-direction:column}.grid{display:grid}.ac{align-items:center}.jc{justify-content:center}.jb{justify-content:space-between}.f1{flex:1}.noshrink{flex-shrink:0}.wrap{flex-wrap:wrap}.fw5{font-weight:500}.fw6{font-weight:600}.fw7{font-weight:700}.fw8{font-weight:800}.fs11{font-size:11px}.fs12{font-size:12px}.fs13{font-size:13px}.fs14{font-size:14px}.fs15{font-size:15px}.fs16{font-size:16px}.fs20{font-size:20px}.fs22{font-size:22px}.upper{text-transform:uppercase}.tc{text-align:center}.nowrap{white-space:nowrap}.gap8{gap:8px}.gap10{gap:10px}.gap12{gap:12px}.gap16{gap:16px}.gap24{gap:24px}.m0{margin:0}.mt8{margin-top:8px}.mt12{margin-top:12px}.mt16{margin-top:16px}.mb8{margin-bottom:8px}.mb12{margin-bottom:12px}.mb16{margin-bottom:16px}.posrel{position:relative}.posabs{position:absolute}.round{border-radius:50%}.ohide{overflow:hidden}.bbox{box-sizing:border-box}.pointer{cursor:pointer}.w100{width:100%}.b0{border:none}"
+  );
+
+  // src/helmet.ts
+  var DESIGN_DOC_MODE_RE = /<meta\b[^>]*\bname\s*=\s*["']design_doc_mode["'][^>]*\b(?:content|value)\s*=\s*["'](\w+)["']/i;
+  var CANVAS_BG_LIGHT = "#f0eee6";
+  var CANVAS_BG_DARK = "#2e2c26";
+  function createHelmetManager(doc, isStreaming) {
+    const mounted = /* @__PURE__ */ new Set();
+    const live = /* @__PURE__ */ new Map();
+    let designDocMode = null;
+    let canvasStyleEl = null;
+    let appTheme = "light";
+    try {
+      const ds = doc.documentElement.dataset.theme;
+      appTheme = ds === "dark" || ds === "light" ? ds : new URLSearchParams(doc.defaultView?.location.search ?? "").get(
+        "theme"
+      ) === "dark" ? "dark" : "light";
+    } catch {
+    }
+    function applyCanvasBg() {
+      if (!canvasStyleEl) return;
+      const bg = appTheme === "dark" ? CANVAS_BG_DARK : CANVAS_BG_LIGHT;
+      canvasStyleEl.textContent = `html,body{background:${bg}}#dc-root>.sc-host{position:relative}`;
+    }
+    function postDesignMode(mode) {
+      if (window.parent === window) return;
+      try {
+        window.parent.postMessage({ type: "__dc_design_mode", mode }, "*");
+      } catch {
+      }
+    }
+    function setDesignDocMode(mode) {
+      if (mode === designDocMode) return;
+      designDocMode = mode;
+      postDesignMode(mode);
+      if (mode === "canvas") {
+        doc.documentElement.setAttribute("data-dc-canvas", "");
+        canvasStyleEl = doc.createElement("style");
+        canvasStyleEl.setAttribute("data-dc-canvas", "");
+        applyCanvasBg();
+        doc.head.appendChild(canvasStyleEl);
+      } else {
+        doc.documentElement.removeAttribute("data-dc-canvas");
+        canvasStyleEl?.remove();
+        canvasStyleEl = null;
+      }
+    }
+    window.addEventListener("message", (e) => {
+      const type = e.data && e.data.type;
+      if (type === "__dc_theme") {
+        const t = e.data.theme;
+        if (t === "light" || t === "dark") {
+          appTheme = t;
+          applyCanvasBg();
+        }
+        return;
+      }
+      if (!designDocMode || type !== "__dc_probe") return;
+      postDesignMode(designDocMode);
+    });
+    function compile(node) {
+      const raw = [...node.children];
+      const helmetClosed = node.nextSibling != null || node.parentNode?.nextSibling != null;
+      if (node.hasAttribute("data-dc-atomics") && !mounted.has("__dc-atomics")) {
+        mounted.add("__dc-atomics");
+        const el = doc.createElement("style");
+        el.id = "__dc-atomics";
+        el.textContent = ATOMIC_CSS;
+        doc.head.appendChild(el);
+      }
+      return (_vals, ctx) => {
+        const name = ctx && ctx.__name || "";
+        const streaming = !!(name && isStreaming(name));
+        for (let i = 0; i < raw.length; i++) {
+          const child = raw[i];
+          const tag = child.tagName;
+          const mayBePartial = streaming && !helmetClosed && i === raw.length - 1;
+          if (tag === "SCRIPT") {
+            if (mayBePartial) continue;
+            const key = "SCRIPT|" + (child.getAttribute("src") || child.textContent || "");
+            if (mounted.has(key)) continue;
+            mounted.add(key);
+            const el = doc.createElement("script");
+            for (const { name: an, value } of [...child.attributes])
+              el.setAttribute(an, value);
+            if (child.textContent) el.textContent = child.textContent;
+            doc.head.appendChild(el);
+          } else if (tag === "LINK" || tag === "META") {
+            if (mayBePartial) continue;
+            const key = tag + "|" + (child.getAttribute("href") || child.getAttribute("src") || child.outerHTML);
+            if (mounted.has(key)) continue;
+            mounted.add(key);
+            if (tag === "LINK") {
+              const rel = (child.getAttribute("rel") || "").toLowerCase().split(/\s+/);
+              const href = (child.getAttribute("href") || "").trim();
+              const res = window.__resources;
+              const pre = res && rel.includes("stylesheet") && !rel.includes("alternate") ? res[href] : void 0;
+              const blob = typeof pre === "string" && pre ? bundledBlob(pre) : null;
+              if (blob) {
+                const el = doc.createElement("style");
+                if (child.hasAttribute("disabled")) {
+                  el.setAttribute("media", "not all");
+                } else if (child.getAttribute("media")) {
+                  el.setAttribute("media", child.getAttribute("media"));
+                }
+                if (child.getAttribute("title"))
+                  el.setAttribute("title", child.getAttribute("title"));
+                void blob.text().then((css) => {
+                  el.textContent = css;
+                });
+                doc.head.appendChild(el);
+                continue;
+              }
+            }
+            doc.head.appendChild(child.cloneNode(true));
+          } else {
+            const key = name + "|" + i;
+            let el = live.get(key);
+            if (!el || el.tagName !== tag) {
+              if (el) el.remove();
+              el = doc.createElement(tag.toLowerCase());
+              live.set(key, el);
+              doc.head.appendChild(el);
+            }
+            for (const { name: an, value } of [...child.attributes]) {
+              if (el.getAttribute(an) !== value) el.setAttribute(an, value);
+            }
+            if (el.textContent !== child.textContent)
+              el.textContent = child.textContent;
+          }
+        }
+        return null;
+      };
+    }
+    return { compile, setDesignDocMode };
+  }
+
+  // src/pseudo.ts
+  function scanUnquotedUrl(css, i) {
+    if (css[i] !== "u" && css[i] !== "U" || css.slice(i, i + 4).toLowerCase() !== "url(" || /[a-z0-9_-]/i.test(css[i - 1] ?? "")) {
+      return -1;
+    }
+    let j = i + 4;
+    while (j < css.length && /\s/.test(css[j])) j++;
+    if (css[j] === '"' || css[j] === "'") return -1;
+    while (j < css.length && css[j] !== ")") {
+      if (css[j] === "\\") j++;
+      j++;
+    }
+    return j < css.length ? j + 1 : css.length;
+  }
+  function stripComments(css) {
+    let out = "";
+    let quote = "";
+    for (let i = 0; i < css.length; i++) {
+      const c = css[i];
+      if (quote) {
+        if (c === "\\") {
+          out += c + (css[i + 1] ?? "");
+          i++;
+          continue;
+        }
+        if (c === quote) quote = "";
+        out += c;
+      } else if (c === "'" || c === '"') {
+        quote = c;
+        out += c;
+      } else if (c === "/" && css[i + 1] === "*") {
+        const end = css.indexOf("*/", i + 2);
+        i = end === -1 ? css.length : end + 1;
+        out += " ";
+      } else {
+        const end = scanUnquotedUrl(css, i);
+        if (end === -1) out += c;
+        else {
+          out += css.slice(i, end);
+          i = end - 1;
+        }
+      }
+    }
+    return out;
+  }
+  function importantify(css) {
+    css = stripComments(css);
+    const decls = [];
+    let start = 0;
+    let depth = 0;
+    let quote = "";
+    for (let i = 0; i < css.length; i++) {
+      const c = css[i];
+      if (quote) {
+        if (c === "\\") i++;
+        else if (c === quote) quote = "";
+      } else if (c === "'" || c === '"') quote = c;
+      else if (c === "(") depth++;
+      else if (c === ")") depth = Math.max(0, depth - 1);
+      else if (c === ";" && depth === 0) {
+        decls.push(css.slice(start, i));
+        start = i + 1;
+      } else {
+        const end = scanUnquotedUrl(css, i);
+        if (end !== -1) i = end - 1;
+      }
+    }
+    decls.push(css.slice(start));
+    return decls.map((d) => d.trim()).filter(Boolean).map((d) => /!\s*important$/i.test(d) ? d : d + " !important").join(";");
+  }
+  function createPseudoSheet(doc) {
+    let el = null;
+    const cache = /* @__PURE__ */ new Map();
+    let n = 0;
+    return (pseudo, css) => {
+      const k = pseudo + "|" + css;
+      const hit = cache.get(k);
+      if (hit) return hit;
+      if (!el) {
+        el = doc.createElement("style");
+        doc.head.appendChild(el);
+      }
+      const cls = "scp" + (n++).toString(36);
+      const isPseudoElement = pseudo === "before" || pseudo === "after";
+      const sel = isPseudoElement ? "." + cls + "::" + pseudo : "." + cls + ":" + pseudo;
+      el.sheet.insertRule(
+        sel + "{" + (isPseudoElement ? css : importantify(css)) + "}",
+        el.sheet.cssRules.length
+      );
+      cache.set(k, cls);
+      return cls;
+    };
+  }
+
+  // src/registry.ts
+  function createRegistry() {
+    const entries = /* @__PURE__ */ Object.create(null);
+    function get(name) {
+      return entries[name] || (entries[name] = {
+        html: "",
+        tpl: null,
+        Logic: null,
+        jsStreaming: false,
+        htmlStreaming: false,
+        ver: 0,
+        subs: /* @__PURE__ */ new Set(),
+        fetched: false
+      });
+    }
+    function bump(name) {
+      const r = get(name);
+      r.ver++;
+      for (const fn of r.subs) fn();
+    }
+    return {
+      entries,
+      get,
+      bump,
+      bumpAll() {
+        for (const n in entries) bump(n);
       }
     };
   }
-}
 
-</script>
-</body>
-</html>
+  // src/runtime.ts
+  var COMPONENT_DIR = ".";
+  function createRuntime(doc = document) {
+    const registry = createRegistry();
+    const pseudoClass = createPseudoSheet(doc);
+    const helmet = createHelmetManager(
+      doc,
+      (name) => registry.get(name).htmlStreaming
+    );
+    const external = createExternalModules(() => registry.bumpAll());
+    const factory = createComponentFactory(registry, ensureFetched);
+    const host = {
+      component: (name) => factory.getDC(name),
+      placeholder: (props) => h(Placeholder, props),
+      helmet: (node) => helmet.compile(node),
+      loadExternal: (kind, url, after) => external.load(kind, url, after),
+      resolveExternal: (url, name) => external.resolve(url, name),
+      resolveExternalGlobal: (url, name) => external.resolveGlobal(url, name),
+      resolveExternalError: (url, name) => external.getError(url, name),
+      pseudoClass
+    };
+    function ensureFetched(name) {
+      const r = registry.get(name);
+      if (r.fetched) return;
+      r.fetched = true;
+      const url = COMPONENT_DIR + "/" + encodeURIComponent(name) + ".dc.html";
+      const res = window.__resources;
+      const pre = res ? res[url] : void 0;
+      const target = typeof pre === "string" && pre ? pre : url;
+      const blob = bundledBlob(target);
+      (blob ? blob.text() : fetch(target).then((res2) => {
+        if (!res2.ok) {
+          console.error(
+            '[dc-runtime] sibling fetch for "' + name + '" failed:',
+            url,
+            "returned",
+            res2.status,
+            "\u2014 the reference renders as an empty placeholder."
+          );
+          return "";
+        }
+        return res2.text();
+      })).then((t) => {
+        if (!t) return;
+        const parsed = parseDcText(t);
+        if (!parsed) {
+          console.error(
+            '[dc-runtime] sibling fetch for "' + name + '":',
+            url,
+            "has no <x-dc> block \u2014 not a Design Component."
+          );
+          return;
+        }
+        if (parsed.props) r.propsMeta = parsed.props;
+        if (parsed.preview) r.preview = parsed.preview;
+        if (parsed.template && !r.html) updateHtml(name, parsed.template);
+        if (parsed.js && !r.Logic) updateJs(name, parsed.js);
+      }).catch(
+        (e) => console.error(
+          '[dc-runtime] sibling fetch for "' + name + '" threw:',
+          url,
+          e
+        )
+      );
+    }
+    let rootName = null;
+    function updateHtml(name, html) {
+      const r = registry.get(name);
+      r.html = html;
+      if (name === rootName) {
+        const mode = DESIGN_DOC_MODE_RE.exec(html)?.[1] ?? null;
+        if (mode || !r.htmlStreaming) helmet.setDesignDocMode(mode);
+      }
+      try {
+        r.tpl = compileTemplate(html, host);
+      } catch (e) {
+        console.error("[dc-runtime] template compile FAILED for", name, e);
+      }
+      registry.bump(name);
+    }
+    function updateJs(name, src) {
+      const r = registry.get(name);
+      const seq = r.jsSeq = (r.jsSeq || 0) + 1;
+      try {
+        const Cls = evalDcLogic(src);
+        if (r.jsSeq !== seq) return;
+        if (typeof Cls !== "function") {
+          r.logicError = name + ".dc.html: <script data-dc-script> must define `class Component extends DCLogic`";
+        } else {
+          r.logicError = null;
+          r.Logic = Cls;
+        }
+      } catch (e) {
+        if (r.jsSeq !== seq) return;
+        console.error(
+          "[dc-runtime] logic class eval FAILED for",
+          name,
+          "\u2014 the template renders with props only.",
+          e
+        );
+        r.logicError = name + ": " + (e instanceof Error && e.message ? e.message : String(e));
+      }
+      registry.bump(name);
+    }
+    function setStreaming(name, kind, on) {
+      const r = registry.get(name);
+      if (kind === "html") r.htmlStreaming = !!on;
+      else r.jsStreaming = !!on;
+      let any = false;
+      for (const n in registry.entries) {
+        const e = registry.entries[n];
+        if (e && (e.htmlStreaming || e.jsStreaming)) {
+          any = true;
+          break;
+        }
+      }
+      doc.documentElement.classList.toggle("sc-dc-streaming", any);
+      registry.bump(name);
+    }
+    function dcUpdate(name, kind, content, streaming) {
+      if (streaming) registry.get(name).fetched = true;
+      if (kind === "html") {
+        setStreaming(name, "html", !!streaming);
+        updateHtml(name, content);
+      } else if (kind === "js") {
+        setStreaming(name, "js", !!streaming);
+        if (!streaming) updateJs(name, content);
+      } else if (kind === "props") {
+        const { props, preview } = parseDataProps(content);
+        const r = registry.get(name);
+        r.propsMeta = props ?? void 0;
+        r.preview = preview;
+        registry.bump(name);
+      }
+    }
+    function setProps(name, overrides) {
+      registry.get(name).propOverrides = overrides && typeof overrides === "object" ? { ...overrides } : null;
+      registry.bump(name);
+    }
+    function adoptParsed(name, parsed) {
+      if (!parsed) return;
+      const r = registry.get(name);
+      if (parsed.props) r.propsMeta = parsed.props;
+      if (parsed.preview) r.preview = parsed.preview;
+      if (parsed.template) updateHtml(name, parsed.template);
+      if (parsed.js) updateJs(name, parsed.js);
+    }
+    return {
+      registry,
+      getDC: factory.getDC,
+      updateHtml,
+      updateJs,
+      dcUpdate,
+      setProps,
+      adoptParsed,
+      setRootName: (name) => {
+        rootName = name;
+      },
+      markFetched: (name) => {
+        registry.get(name).fetched = true;
+      },
+      annotatedTemplate: (name) => {
+        const r = registry.get(name);
+        return r.tpl && r.tpl.__annotated || null;
+      },
+      templateSource: (name) => registry.get(name).html || null,
+      StreamableLogic
+    };
+  }
+
+  // src/stream-state.ts
+  function createStreamTracker(staleMs = 6e4, now = Date.now) {
+    const since = /* @__PURE__ */ new Map();
+    const liveOne = (n) => {
+      const t = since.get(n);
+      if (t === void 0) return false;
+      if (now() - t > staleMs) {
+        since.delete(n);
+        return false;
+      }
+      return true;
+    };
+    return {
+      push(name, streaming, viewportKey) {
+        if (viewportKey === "dc-model") return;
+        if (streaming) since.set(name, now());
+        else since.delete(name);
+      },
+      live(name) {
+        if (name !== void 0) return liveOne(name);
+        for (const n of [...since.keys()]) if (liveOne(n)) return true;
+        return false;
+      }
+    };
+  }
+
+  // src/index.ts
+  function hideRawTemplate() {
+    const s = document.createElement("style");
+    s.textContent = "x-dc{display:none!important}";
+    document.head.appendChild(s);
+  }
+  function loadScript(src, integrity) {
+    return new Promise((resolve2, reject) => {
+      //! nosemgrep: create-script-element
+      const s = document.createElement("script");
+      s.src = src;
+      if (integrity) {
+        s.integrity = integrity;
+        s.crossOrigin = "anonymous";
+      }
+      s.async = false;
+      s.onload = () => resolve2();
+      s.onerror = () => reject(new Error(`failed to load ${src}`));
+      document.head.appendChild(s);
+    });
+  }
+  function loadReactUmd() {
+    const w = window;
+    if (w.React && w.ReactDOM) return Promise.resolve();
+    const react = cdnScriptFor(REACT_URL, REACT_SRI);
+    const reactDom = cdnScriptFor(REACT_DOM_URL, REACT_DOM_SRI);
+    return Promise.all([
+      loadScript(react.src, react.integrity),
+      loadScript(reactDom.src, reactDom.integrity)
+    ]).then(() => void 0);
+  }
+  function init() {
+    const runtime = createRuntime(document);
+    let rootName = "Root";
+    const baseCss = document.createElement("style");
+    baseCss.textContent = BASE_CSS;
+    document.head.prepend(baseCss);
+    const notifyHost = () => {
+      if (window.parent === window) return;
+      const r = runtime.registry.entries[rootName];
+      try {
+        window.parent.postMessage(
+          {
+            type: "__dc_booted",
+            rootName,
+            propsMeta: r && r.propsMeta || null,
+            preview: r && r.preview || null
+          },
+          "*"
+        );
+      } catch {
+      }
+    };
+    const streams = createStreamTracker();
+    const api = {
+      __dcUpdate: (name, kind, content, streaming, viewportKey) => {
+        streams.push(name, streaming, viewportKey);
+        runtime.dcUpdate(name, kind, content, streaming);
+        if (name === rootName && !streaming && kind === "props") notifyHost();
+      },
+      __dcStreaming: (name) => streams.live(name),
+      __dcSetProps: (name, overrides) => runtime.setProps(name, overrides),
+      /** Name of the component currently mounted as the page root — DC tools
+       *  push their template-stream here when targeting "the open page". */
+      __dcRootName: () => rootName,
+      /** Editor bridge — the encoded, `data-dc-tpl`-annotated template source.
+       *  The host editor parses this into its own template DOM so it can map a
+       *  rendered node (carrying the same `data-dc-tpl`) back to the source
+       *  node that emitted it. Returns the encoded form (`sc-camel-*` attrs,
+       *  `<sc-raw-*>`/`<sc-helmet>` tags); the editor decodes on serialize. */
+      __dcAnnotatedTemplate: (name) => runtime.annotatedTemplate(name),
+      /** Editor bridge — the *original* (decoded) template source. */
+      __dcTemplateSource: (name) => runtime.templateSource(name),
+      __dcBoot: () => {
+        rootName = boot(runtime, document) ?? rootName;
+        notifyHost();
+      },
+      __dcRegistry: runtime.registry.entries,
+      getDC: (name) => runtime.getDC(name),
+      // `DCLogic` is the documented base class name; `StreamableLogic` is the
+      // implementation alias kept for any project that already references it.
+      DCLogic: runtime.StreamableLogic,
+      StreamableLogic: runtime.StreamableLogic
+    };
+    Object.assign(window, api);
+    window.__dcContentKeyed = true;
+    if (document.readyState !== "loading") api.__dcBoot();
+    else document.addEventListener("DOMContentLoaded", () => api.__dcBoot());
+  }
+  hideRawTemplate();
+  loadReactUmd().then(init).catch((err) => {
+    console.error("[dc] failed to load React or boot:", err);
+    throw err;
+  });
+})();
