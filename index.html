@@ -702,8 +702,12 @@ class Component extends DCLogic {
 
   componentDidMount() {
     const theme = this.props.defaultTheme || 'light';
+    const hashView = (window.location.hash || '').replace('#', '');
+    const allowedViews = ['thesis', 'rerank', 'kgdpo', 'physics', 'gui'];
+    const view = allowedViews.includes(hashView) ? hashView : 'home';
     this.applyTheme(theme);
-    this.setState({ theme });
+    this.setState({ theme, view });
+    if (view !== 'home') window.scrollTo({ top: 0 });
     this.icons();
   }
 
@@ -722,7 +726,12 @@ class Component extends DCLogic {
 
   open(view) {
     this.setState({ view });
-    if (view !== 'home') window.scrollTo({ top: 0 });
+    if (view === 'home') {
+      history.pushState(null, '', window.location.pathname + window.location.search);
+    } else {
+      history.pushState(null, '', '#' + view);
+      window.scrollTo({ top: 0 });
+    }
   }
 
   renderVals() {
@@ -779,7 +788,7 @@ class Component extends DCLogic {
       gui: 'isGui'
     };
 
-    function setView(view) {
+    function setView(view, updateUrl) {
       const active = viewMap[view] || viewMap.home;
       document.querySelectorAll('sc-if').forEach(function (node) {
         const expr = node.getAttribute('value') || '';
@@ -787,6 +796,10 @@ class Component extends DCLogic {
           node.style.display = expr.indexOf(active) !== -1 ? '' : 'none';
         }
       });
+      if (updateUrl !== false) {
+        if (view === 'home') history.pushState(null, '', window.location.pathname + window.location.search);
+        else history.pushState(null, '', '#' + view);
+      }
       if (view !== 'home') window.scrollTo({ top: 0, behavior: 'auto' });
     }
 
@@ -815,7 +828,9 @@ class Component extends DCLogic {
       else root.setAttribute('data-theme', 'light');
     });
 
-    setView('home');
+    const initialHashView = (window.location.hash || '').replace('#', '');
+    const initialView = viewMap[initialHashView] ? initialHashView : 'home';
+    setView(initialView, false);
     if (window.lucide) window.lucide.createIcons();
   }
 
