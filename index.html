@@ -222,183 +222,177 @@
   <sc-if value="{{ isThesis }}" hint-placeholder-val="{{ false }}">
   <div style="display:flex;flex-direction:column">
 
-    <section style="max-width:960px;margin:0 auto;padding:56px 32px 34px;display:flex;flex-direction:column;gap:17px;align-items:center;text-align:center;width:100%;box-sizing:border-box">
+    <!-- HERO -->
+    <section style="max-width:920px;margin:0 auto;padding:56px 32px 30px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center">
       <button type="button" onClick="{{ goHome }}" style="align-self:flex-start;display:inline-flex;align-items:center;gap:7px;min-height:32px;padding:0 12px;border:1px solid var(--line);border-radius:var(--radius-pill);background:none;color:var(--ink-500);font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="color:var(--ink-900);border-color:var(--ink-900)" style-active="transform:scale(0.98)"><i data-lucide="arrow-left" style="width:14px;height:14px;flex:none"></i>Hai Zhou</button>
-      <p style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal-700);margin:0">M.Sc. Thesis · Verifiable Reasoning · 2026</p>
-      <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:40px;line-height:1.12;letter-spacing:-0.03em;color:var(--ink-900);margin:0;max-width:25ch;text-wrap:balance">Typed Stage Contracts for Knowledge Graph Question Answering: Traceable Reasoning, Bounded Repair, and Trajectory Supervision</h1>
-      <p style="font-size:18.5px;line-height:1.6;color:var(--ink-600);margin:0;max-width:70ch;text-wrap:balance">A case study over UK public procurement, using a typed, stage-linked KGQA runtime to make intermediate reasoning states explicit, localise recognised failures for bounded repair, and turn completed trajectories into correctness-filtered supervision.</p>
-      <p style="font-size:15px;line-height:1.6;color:var(--ink-500);margin:0;max-width:62ch">Supervised by <a href="https://profiles.ucl.ac.uk/7661-miguel-rodrigues" target="_blank" rel="noreferrer">Prof. Miguel Rodrigues</a> · University College London</p>
-      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding-top:6px">
-        <a href="uploads/Hai_Zhou_Thesis.pdf" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 18px;border-radius:var(--radius-pill);background:var(--ink-900);color:var(--bg);font-size:14px;font-weight:600;white-space:nowrap;border-bottom:0;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="transform:translateY(-2px);color:var(--bg)" style-active="transform:translateY(0) scale(0.98)"><i data-lucide="file-text" style="width:15px;height:15px;flex:none"></i>Paper (PDF)</a>
-        <a href="https://github.com/haizhou/Auditable-Compositional-Question-Answering-over-UK-Public-Procurement" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 18px;border-radius:var(--radius-pill);background:var(--ink-900);color:var(--bg);font-size:14px;font-weight:600;white-space:nowrap;border-bottom:0;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="transform:translateY(-2px);color:var(--bg)" style-active="transform:translateY(0) scale(0.98)"><i data-lucide="github" style="width:15px;height:15px;flex:none"></i>GitHub</a>
-        <a href="uploads/Hai_Zhou_CV.pdf" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 18px;border-radius:var(--radius-pill);background:none;color:var(--ink-700);font-size:14px;font-weight:600;white-space:nowrap;border:1px solid var(--line);transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="border-color:var(--ink-900);color:var(--ink-900)" style-active="transform:scale(0.98)"><i data-lucide="file-text" style="width:15px;height:15px;flex:none"></i>CV</a>
-        <a href="mailto:uceeh01@ucl.ac.uk?subject=Auditable%20Compositional%20QA" style="display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 18px;border-radius:var(--radius-pill);background:none;color:var(--ink-700);font-size:14px;font-weight:600;white-space:nowrap;border:1px solid var(--line);transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="border-color:var(--ink-900);color:var(--ink-900)" style-active="transform:scale(0.98)"><i data-lucide="mail" style="width:15px;height:15px;flex:none"></i>Email</a>
+      <p style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal-700);margin:0">M.Sc. Thesis · UCL · 2026</p>
+      <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:42px;line-height:1.08;letter-spacing:-0.035em;color:var(--ink-900);margin:0;max-width:22ch;text-wrap:balance">Typed Stage Contracts for Knowledge Graph Question Answering</h1>
+      <p style="font-family:'Space Grotesk',sans-serif;font-size:20px;line-height:1.45;font-weight:500;color:var(--ink-500);margin:0;max-width:44ch;text-wrap:balance">Traceable Reasoning, Bounded Repair, and Trajectory Supervision</p>
+      <p style="font-size:16.5px;line-height:1.75;color:var(--ink-600);margin:2px 0 0;max-width:65ch;text-wrap:pretty">A verifiable KGQA runtime in which LLMs propose typed computations, while deterministic contracts ground, execute, diagnose, and control release. The same retained trajectory later becomes structured supervision for direct plans, repairs, and preferences.</p>
+      <p style="font-size:14px;line-height:1.6;color:var(--ink-500);margin:0">Case study: UK public procurement · Supervised by <a href="https://profiles.ucl.ac.uk/7661-miguel-rodrigues" target="_blank" rel="noreferrer">Prof. Miguel Rodrigues</a></p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding-top:4px">
+        <a href="uploads/Hai_Zhou_Thesis.pdf" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 18px;border-radius:var(--radius-pill);background:var(--ink-900);color:var(--bg);font-size:14px;font-weight:600;white-space:nowrap;border-bottom:0;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="transform:translateY(-2px);color:var(--bg)" style-active="transform:translateY(0) scale(0.98)"><i data-lucide="file-text" style="width:15px;height:15px;flex:none"></i>Paper</a>
+        <a href="https://github.com/haizhou/Auditable-Compositional-Question-Answering-over-UK-Public-Procurement" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 18px;border-radius:var(--radius-pill);background:none;color:var(--ink-700);font-size:14px;font-weight:600;white-space:nowrap;border:1px solid var(--line);transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="border-color:var(--ink-900);color:var(--ink-900)" style-active="transform:scale(0.98)"><i data-lucide="github" style="width:15px;height:15px;flex:none"></i>GitHub</a>
+      </div>
+      <div style="width:100%;max-width:760px;margin-top:14px;padding-top:20px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px">
+        <div style="padding:10px 8px;display:flex;flex-direction:column;gap:4px"><strong style="font-family:'Space Grotesk',sans-serif;font-size:27px;color:var(--ink-900)">85.68%</strong><span style="font-family:'Space Mono',monospace;font-size:9.8px;line-height:1.45;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-400)">Local Qwen · primary test</span></div>
+        <div style="padding:10px 8px;border-left:1px solid var(--line);border-right:1px solid var(--line);display:flex;flex-direction:column;gap:4px"><strong style="font-family:'Space Grotesk',sans-serif;font-size:27px;color:var(--ink-900)">69.19%</strong><span style="font-family:'Space Mono',monospace;font-size:9.8px;line-height:1.45;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-400)">Cloud runtime</span></div>
+        <div style="padding:10px 8px;display:flex;flex-direction:column;gap:4px"><strong style="font-family:'Space Grotesk',sans-serif;font-size:27px;color:var(--ink-900)">48.18%</strong><span style="font-family:'Space Mono',monospace;font-size:9.8px;line-height:1.45;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-400)">Oracle-correct after repair</span></div>
       </div>
     </section>
 
-    <section style="max-width:960px;margin:0 auto;padding:4px 32px 46px;width:100%;box-sizing:border-box;display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px">
-      <div style="padding:17px 14px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);display:flex;flex-direction:column;gap:5px;text-align:center"><strong style="font-family:'Space Grotesk',sans-serif;font-size:25px;color:var(--ink-900)">85.68%</strong><span style="font-family:'Space Mono',monospace;font-size:10px;line-height:1.45;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-400)">Local Qwen · primary test</span></div>
-      <div style="padding:17px 14px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);display:flex;flex-direction:column;gap:5px;text-align:center"><strong style="font-family:'Space Grotesk',sans-serif;font-size:25px;color:var(--ink-900)">69.19%</strong><span style="font-family:'Space Mono',monospace;font-size:10px;line-height:1.45;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-400)">Cloud runtime</span></div>
-      <div style="padding:17px 14px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);display:flex;flex-direction:column;gap:5px;text-align:center"><strong style="font-family:'Space Grotesk',sans-serif;font-size:25px;color:var(--ink-900)">48.18%</strong><span style="font-family:'Space Mono',monospace;font-size:10px;line-height:1.45;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-400)">Oracle-correct after repair</span></div>
-      <div style="padding:17px 14px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);display:flex;flex-direction:column;gap:5px;text-align:center"><strong style="font-family:'Space Grotesk',sans-serif;font-size:25px;color:var(--ink-900)">18.28%</strong><span style="font-family:'Space Mono',monospace;font-size:10px;line-height:1.45;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-400)">Runtime-pass traces filtered offline</span></div>
-      <div style="padding:17px 14px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);display:flex;flex-direction:column;gap:5px;text-align:center"><strong style="font-family:'Space Grotesk',sans-serif;font-size:25px;color:var(--ink-900)">12,828</strong><span style="font-family:'Space Mono',monospace;font-size:10px;line-height:1.45;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-400)">Program-first benchmark</span></div>
-      <div style="padding:17px 14px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);display:flex;flex-direction:column;gap:5px;text-align:center"><strong style="font-family:'Space Grotesk',sans-serif;font-size:25px;color:var(--ink-900)">215,221</strong><span style="font-family:'Space Mono',monospace;font-size:10px;line-height:1.45;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-400)">Contract nodes in frozen KG</span></div>
-    </section>
-
-    <section style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:54px 32px">
-      <div style="max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:20px">
-        <div style="display:flex;flex-direction:column;gap:8px;max-width:780px">
-          <p style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.13em;text-transform:uppercase;color:var(--teal-700);margin:0">Motivation</p>
-          <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">Why retrieval and executability are not enough</h2>
+    <!-- MOTIVATION -->
+    <section style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:52px 32px">
+      <div style="max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;flex-direction:column;gap:7px;max-width:760px">
+          <p style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.13em;text-transform:uppercase;color:var(--teal-700);margin:0">Why this problem?</p>
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;color:var(--ink-900);margin:0">Execution alone is not enough</h2>
         </div>
-        <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;max-width:800px;text-wrap:pretty">Many procurement questions require exhaustive set construction, multi-hop joins, and exact aggregation. A top-k retriever can return relevant-looking records without recovering the full population needed for a count or sum. An executable program can fail differently: it may run without error while encoding the wrong question. The system therefore separates proposal from authority. Learned components interpret the request and propose a computation; deterministic components define the data semantics, resolve the proposal against the frozen graph, execute it, and decide whether the resulting state may advance or be released.</p>
-        <figure style="margin:10px 0 0;border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;background:#ffffff">
-          <img src="uploads/fig01_environment%20(1).png" alt="Running example comparing retrieval-augmented reading, an executable program without supervision, and the verified typed runtime" style="display:block;width:100%;height:auto">
-          <figcaption style="padding:13px 16px;background:var(--surface-soft);border-top:1px solid var(--line);font-size:13.5px;line-height:1.6;color:var(--ink-500);text-align:left"><strong style="color:var(--ink-700)">Running example.</strong> Retrieval sees only a bounded window; an executable one-shot program counts the wrong population; the typed runtime materialises the supplier → buyer → notice bridge and checks the computation before release.</figcaption>
+        <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;max-width:790px;text-wrap:pretty">Retrieval may miss the full population required for an exact aggregation, while an executable program may run successfully yet encode the wrong computation. The runtime therefore separates <strong style="color:var(--ink-800)">proposal</strong> from <strong style="color:var(--ink-800)">authority</strong>: learned components propose typed states, while deterministic components decide whether those states are structurally valid, grounded, executable, and releasable.</p>
+        <figure style="margin:8px 0 0">
+          <div style="border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;background:#fff"><img src="uploads/fig01_environment.png" alt="Running example comparing retrieval, an executable program that answers the wrong question, and the verified runtime" style="display:block;width:100%;height:auto"></div>
+          <figcaption style="margin-top:10px;font-size:13.5px;line-height:1.65;color:var(--ink-500)"><strong style="color:var(--ink-700)">Running example.</strong> Retrieval sees a bounded window; a syntactically valid one-shot program counts the wrong population; the typed runtime explicitly constructs the supplier → buyer → notice bridge and checks the intermediate computation before release.</figcaption>
         </figure>
       </div>
     </section>
 
-    <section style="max-width:880px;margin:0 auto;padding:52px 32px 36px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:22px">
-      <div style="display:flex;flex-direction:column;gap:8px">
-        <p style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.13em;text-transform:uppercase;color:var(--teal-700);margin:0">01 · Typed runtime</p>
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">One persistent trajectory links interpretation, computation, evidence, and repair</h2>
+    <!-- SYSTEM -->
+    <section style="max-width:900px;margin:0 auto;padding:54px 32px 46px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:22px">
+      <div style="display:flex;flex-direction:column;gap:7px">
+        <p style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.13em;text-transform:uppercase;color:var(--teal-700);margin:0">The system</p>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;color:var(--ink-900);margin:0">A persistent typed reasoning trajectory</h2>
       </div>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">The runtime is deliberately split into explicit typed states rather than one opaque model call. A structured-understanding model first produces an interpretation <code style="font-family:'Space Mono',monospace;font-size:0.9em;color:var(--ink-700)">u</code>; the planner builds an executable program <code style="font-family:'Space Mono',monospace;font-size:0.9em;color:var(--ink-700)">z</code>; grounding binds it to the graph as <code style="font-family:'Space Mono',monospace;font-size:0.9em;color:var(--ink-700)">z_K</code>; the deterministic executor returns <code style="font-family:'Space Mono',monospace;font-size:0.9em;color:var(--ink-700)">r</code>; and the final answer card is constructed only after release checks pass. Every state, contract outcome, diagnostic, and revision is appended to the same persistent trajectory.</p>
-
-      <div style="padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);display:flex;flex-direction:column;gap:12px">
-        <div style="font-family:'Space Mono',monospace;font-size:12.5px;line-height:1.8;color:var(--ink-700);overflow-x:auto;white-space:nowrap">q → u → z → z<sub>K</sub> → r → ŷ</div>
-        <div style="font-size:14px;line-height:1.7;color:var(--ink-500)"><strong style="color:var(--ink-700)">Stage contract:</strong> each state is checked when the required evidence becomes available, producing one of <code style="font-family:'Space Mono',monospace">continue</code>, <code style="font-family:'Space Mono',monospace">repair</code>, or <code style="font-family:'Space Mono',monospace">reject</code>. A repairable failure stores a structured diagnostic before any revision is attempted.</div>
-      </div>
-
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px">
-        <div style="padding:19px;border:1px solid var(--line);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:9px">
-          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:17px;color:var(--ink-900);margin:0">Structured understanding</h3>
-          <p style="font-size:14.5px;line-height:1.72;color:var(--ink-600);margin:0">The first learned state records the answer signature, explicit literals, role-bearing entities, requested operations, dependencies, and answerability decision. This makes year filters, entity roles, comparison direction, and expected answer type inspectable before a backend program is chosen.</p>
-        </div>
-        <div style="padding:19px;border:1px solid var(--line);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:9px">
-          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:17px;color:var(--ink-900);margin:0">Recursive algebra</h3>
-          <p style="font-size:14.5px;line-height:1.72;color:var(--ink-600);margin:0">Programs are bounded recursive trees with depth ≤ 16 and at most 64 nodes. Nodes operate over Records, Values, Groups, numbers, Booleans, and scalar values, composing filtering, projection, aggregation, grouping, ranking, comparison, set operations, and computed membership.</p>
-        </div>
-        <div style="padding:19px;border:1px solid var(--line);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:9px">
-          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:17px;color:var(--ink-900);margin:0">Deterministic authority</h3>
-          <p style="font-size:14.5px;line-height:1.72;color:var(--ink-600);margin:0">The model never defines execution semantics. Fixed grounding and operator rules determine populations, distinct projections, deduplicated counts, decimal sums, and stable ranking ties; ambiguous bindings fail explicitly instead of being chosen merely because they execute.</p>
-        </div>
-      </div>
-
-      <figure style="margin:8px 0 0;border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;background:#ffffff">
-        <img src="uploads/fig02_stage_trace%20(1).png" alt="Stage-linked reasoning trajectory with typed failure detection, bounded repair, deterministic execution, and supervision export" style="display:block;width:100%;height:auto">
-        <figcaption style="padding:13px 16px;background:var(--surface-soft);border-top:1px solid var(--line);font-size:13.5px;line-height:1.6;color:var(--ink-500);text-align:left"><strong style="color:var(--ink-700)">Stage-linked trace.</strong> The example preserves the failed compiled plan, identifies a dropped year constraint during preflight, supplies typed feedback to the reflector, replays the corrected plan, and retains the failed/repaired pair for later supervision.</figcaption>
+      <figure style="margin:0">
+        <div style="border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;background:#fff"><img src="uploads/fig02_stage_trace.png" alt="Typed stage trajectory with grounding failure, structured feedback, bounded repair, deterministic execution, and training signals" style="display:block;width:100%;height:auto"></div>
+        <figcaption style="margin-top:10px;font-size:13.5px;line-height:1.65;color:var(--ink-500)">Online reasoning and later supervision share one retained trajectory, but not one decision authority: inference is oracle-free; offline curation may use the hidden typed oracle only after the run has terminated.</figcaption>
       </figure>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:4px">
+        <div style="padding:19px 20px;border-top:2px solid var(--blue-700);background:var(--surface-soft);border-radius:0 0 var(--radius-md) var(--radius-md)"><h3 style="font-family:'Space Grotesk',sans-serif;font-size:16.5px;color:var(--ink-900);margin:0 0 8px">Explicit intermediate states</h3><p style="font-size:14.5px;line-height:1.7;color:var(--ink-600);margin:0"><code style="font-family:'Space Mono',monospace;font-size:.9em">question → interpretation → program → grounded program → execution → release</code>. Each state is retained instead of preserving only the final program.</p></div>
+        <div style="padding:19px 20px;border-top:2px solid var(--teal-700);background:var(--surface-soft);border-radius:0 0 var(--radius-md) var(--radius-md)"><h3 style="font-family:'Space Grotesk',sans-serif;font-size:16.5px;color:var(--ink-900);margin:0 0 8px">Stage contracts</h3><p style="font-size:14.5px;line-height:1.7;color:var(--ink-600);margin:0">Each boundary decides <code style="font-family:'Space Mono',monospace;font-size:.9em">continue</code>, <code style="font-family:'Space Mono',monospace;font-size:.9em">repair</code>, or <code style="font-family:'Space Mono',monospace;font-size:.9em">reject</code>, and records a typed diagnostic such as a missing constraint, ambiguous binding, or type violation.</p></div>
+        <div style="padding:19px 20px;border-top:2px solid var(--gold-ink);background:var(--surface-soft);border-radius:0 0 var(--radius-md) var(--radius-md)"><h3 style="font-family:'Space Grotesk',sans-serif;font-size:16.5px;color:var(--ink-900);margin:0 0 8px">Bounded repair</h3><p style="font-size:14.5px;line-height:1.7;color:var(--ink-600);margin:0">Repair revises the failed computation state and replays affected downstream stages. The expected answer is never exposed online; main evaluation allows one feedback revision and teacher collection allows two.</p></div>
+      </div>
     </section>
 
+    <!-- EXECUTABLE FOUNDATION -->
     <section style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:52px 32px">
-      <div style="max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:22px">
-        <div style="display:flex;flex-direction:column;gap:8px">
-          <p style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.13em;text-transform:uppercase;color:var(--teal-700);margin:0">02 · Data and task construction</p>
-          <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">The graph and benchmark are part of the reasoning contract</h2>
+      <div style="max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:22px">
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <p style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.13em;text-transform:uppercase;color:var(--teal-700);margin:0">Executable foundation</p>
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;color:var(--ink-900);margin:0">What is actually executed?</h2>
         </div>
-        <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">The frozen world state is built from UK Contracts Finder releases from 2022–2026. For each OCID, the loader keeps the latest parseable release; organisations are merged only under identifier or exact-match rules, and fuzzy similarity is used for review candidates rather than automatic merging. Monetary values follow a fixed source precedence, with additivity and provenance retained so that aggregation semantics are explicit before inference.</p>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px">
-          <div style="padding:20px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);display:flex;flex-direction:column;gap:10px">
-            <h3 style="font-family:'Space Grotesk',sans-serif;font-size:17px;color:var(--ink-900);margin:0">Frozen procurement graph</h3>
-            <p style="font-size:14.5px;line-height:1.72;color:var(--ink-600);margin:0">The retained snapshot contains <strong style="color:var(--ink-800)">215,221 contract nodes</strong> and <strong style="color:var(--ink-800)">131,502 canonical organisations</strong>. Grounding resolves schema fields, buyer/supplier roles, entity mentions, and literals against this frozen state; counts deduplicate contract identifiers and sums preserve declared value semantics.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px">
+          <div style="padding:22px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--bg)">
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-size:17px;color:var(--ink-900);margin:0 0 13px">Frozen world</h3>
+            <div style="display:flex;flex-direction:column;gap:9px;font-size:14.5px;line-height:1.6;color:var(--ink-600)">
+              <span><strong style="color:var(--ink-800)">2022–2026</strong> UK procurement snapshot</span>
+              <span><strong style="color:var(--ink-800)">215,221</strong> contract nodes</span>
+              <span><strong style="color:var(--ink-800)">131,502</strong> canonical organisations</span>
+              <span>Precision-first identity resolution; explicit value precedence, additivity, and source provenance</span>
+            </div>
           </div>
-          <div style="padding:20px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);display:flex;flex-direction:column;gap:10px">
-            <h3 style="font-family:'Space Grotesk',sans-serif;font-size:17px;color:var(--ink-900);margin:0">Program-first benchmark</h3>
-            <p style="font-size:14.5px;line-height:1.72;color:var(--ink-600);margin:0">The generator first creates <strong style="color:var(--ink-800)">10,000 executable answer specifications</strong>; after question-generation consistency checks, <strong style="color:var(--ink-800)">9,044 base question–program pairs</strong> remain. Answerability variants and extra surface forms add 3,784 rows, yielding the final <strong style="color:var(--ink-800)">12,828-question</strong> corpus.</p>
+          <div style="padding:22px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--bg)">
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-size:17px;color:var(--ink-900);margin:0 0 13px">Typed program space</h3>
+            <div style="display:flex;flex-direction:column;gap:9px;font-size:14.5px;line-height:1.6;color:var(--ink-600)">
+              <span>Closed recursive algebra over <strong style="color:var(--ink-800)">Records, Values, Groups, scalars, and Booleans</strong></span>
+              <span>Hard guards: <strong style="color:var(--ink-800)">depth ≤ 16</strong>, <strong style="color:var(--ink-800)">≤ 64 nodes</strong></span>
+              <span>Filtering, projection, aggregation, grouping, ranking, comparison, set operations, and computed membership</span>
+              <span>Deterministic semantics for deduplication, decimal sums, and stable ranking ties</span>
+            </div>
           </div>
         </div>
-        <p style="font-size:15px;line-height:1.72;color:var(--ink-500);margin:0;text-wrap:pretty">All descendants of the same executable program stay in the same split, preventing paraphrase or answerability variants from leaking across partitions. The benchmark explicitly includes unsupported, ambiguous, empty-denotation, lookup, aggregation, comparison, ranking, set, and multi-hop cases rather than collapsing every request into an answer string.</p>
+        <p style="font-size:15.5px;line-height:1.75;color:var(--ink-600);margin:0;text-wrap:pretty">The benchmark is <strong style="color:var(--ink-800)">program-first</strong>: executable answer specifications are created and checked before questions are verbalised. After consistency screening, answerability variants, and grouped expansion, the final corpus contains <strong style="color:var(--ink-900)">12,828 questions</strong> while preserving the executable specification behind each item.</p>
       </div>
     </section>
 
-    <section style="max-width:880px;margin:0 auto;padding:52px 32px 42px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:22px">
-      <div style="display:flex;flex-direction:column;gap:8px">
-        <p style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.13em;text-transform:uppercase;color:var(--teal-700);margin:0">03 · Verification and bounded repair</p>
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">Failures are attached to the state and predicate that rejected them</h2>
+    <!-- FAILURE TO SUPERVISION -->
+    <section style="max-width:900px;margin:0 auto;padding:54px 32px 46px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:22px">
+      <div style="display:flex;flex-direction:column;gap:7px">
+        <p style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.13em;text-transform:uppercase;color:var(--teal-700);margin:0">Verification → repair → learning</p>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;color:var(--ink-900);margin:0">From failure to supervision</h2>
       </div>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">Structural checks validate references, dependency order, operator signatures, return types, and consistency with the interpreted request. Grounding checks schema resolution, entity ambiguity, exhaustive population selection, and aggregation guards. Execution and release checks then evaluate result shape, evidence, and terminal semantics. Passing a stage means only that no represented violation remains; it is not treated as proof that the program is semantically correct.</p>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">When a represented failure is repairable, the runtime stores the failed state and structured diagnostic, then asks the repair model to revise the interpretation, program, or both—without access to the reference answer. Main evaluation permits one feedback-conditioned revision; teacher collection permits two. Unsupported and ambiguous requests terminate explicitly, clean empty denotations return no-result, and exhausted answerable requests remain unreleased rather than being forced into a guess.</p>
-      <div style="padding:15px 18px;border-left:3px solid var(--teal-700);border-radius:0 var(--radius-md) var(--radius-md) 0;background:var(--teal-soft);font-size:14px;line-height:1.7;color:var(--ink-700)"><strong style="color:var(--ink-900)">Why grounding matters:</strong> during teacher collection, 1,363 of 1,506 recorded online violations (90.5%) occur before execution, with most mechanically decidable failures appearing only after symbolic fields and entities have been grounded.</div>
-      <figure style="margin:8px 0 0;border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;background:#ffffff">
-        <a href="uploads/gate_bar_and_repair_donut_v6%20(5).pdf" target="_blank" rel="noreferrer" style="display:block;border:0"><img src="uploads/gate_bar_and_repair_donut_v6.png" alt="Stage-specific gate activity and outcomes after bounded repair" style="display:block;width:100%;height:auto"></a>
-        <figcaption style="padding:13px 16px;background:var(--surface-soft);border-top:1px solid var(--line);font-size:13.5px;line-height:1.6;color:var(--ink-500);text-align:left"><strong style="color:var(--ink-700)">Contract activations and repair outcomes.</strong> Of 3,626 answerable attempts entering formal repair, 1,747 (48.18%) finish oracle-correct, 313 (8.63%) pass runtime checks but remain oracle-wrong, and 1,566 (43.19%) remain unresolved under the fixed repair budget. The oracle mismatch bar is an offline curation condition, not a deployed gate.</figcaption>
-      </figure>
+      <div style="padding:20px 18px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);overflow-x:auto">
+        <div style="min-width:610px;display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr auto 1fr;align-items:center;gap:10px;text-align:center;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--ink-600)">
+          <div style="padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink-800)">FAILED STATE</div><span>→</span>
+          <div style="padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink-800)">TYPED DIAGNOSTIC</div><span>→</span>
+          <div style="padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink-800)">BOUNDED REPAIR</div><span>→</span>
+          <div style="padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink-800)">OFFLINE FILTER</div><span>→</span>
+          <div style="padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink-800)">TRAINING SIGNAL</div>
+        </div>
+      </div>
+      <p style="font-size:16px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">The key separation is between <strong style="color:var(--ink-800)">runtime acceptance</strong> and <strong style="color:var(--ink-800)">offline correctness</strong>. Of <strong style="color:var(--ink-900)">6,860</strong> answer-producing teacher trajectories that passed all online contracts, <strong style="color:var(--ink-900)">1,254</strong> still disagreed with the hidden typed oracle. Without the offline filter, <strong style="color:var(--ink-900)">18.28%</strong> of these runtime-passing traces would have received an incorrect positive label.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+        <div style="padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md)"><h3 style="font-family:'Space Grotesk',sans-serif;font-size:16px;color:var(--ink-900);margin:0 0 7px">Direct plan</h3><p style="font-size:14px;line-height:1.65;color:var(--ink-600);margin:0">Question + structured interpretation → verified executable program.</p></div>
+        <div style="padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md)"><h3 style="font-family:'Space Grotesk',sans-serif;font-size:16px;color:var(--ink-900);margin:0 0 7px">Repair</h3><p style="font-size:14px;line-height:1.65;color:var(--ink-600);margin:0">Failed state + typed diagnostic → oracle-correct revised program.</p></div>
+        <div style="padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md)"><h3 style="font-family:'Space Grotesk',sans-serif;font-size:16px;color:var(--ink-900);margin:0 0 7px">Preference</h3><p style="font-size:14px;line-height:1.65;color:var(--ink-600);margin:0">Accepted and rejected alternatives under the same question and briefing.</p></div>
+      </div>
+      <details style="border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-soft);padding:0 18px">
+        <summary style="cursor:pointer;padding:15px 0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14.5px;color:var(--ink-700)">Training details</summary>
+        <div style="padding:0 0 18px;font-size:14px;line-height:1.75;color:var(--ink-600)">The cloud runtime collects candidates from the 9,267-question training partition. Step 1 and Step 2 SFT use three epochs at 1e−4; Step 2 RSFT uses two epochs at 5e−5; DPO uses one epoch at 5e−6 with β = 0.1. Local checkpoints use 4-bit QLoRA (rank 64, α = 128, dropout 0.05), BF16 computation, effective batch size 16, and a 6,144-token cutoff. After filtering, the eligible pool includes 5,606 verified direct-plan trajectories, 1,747 oracle-correct repairs, and 390 accepted–rejected preference pairs before task-specific down-selection.</div>
+      </details>
     </section>
 
+    <!-- RESULTS -->
     <section style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:52px 32px">
-      <div style="max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:22px">
-        <div style="display:flex;flex-direction:column;gap:8px">
-          <p style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.13em;text-transform:uppercase;color:var(--teal-700);margin:0">04 · Trajectory supervision</p>
-          <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">Online acceptance and offline correctness are deliberately separate authorities</h2>
+      <div style="max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <p style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.13em;text-transform:uppercase;color:var(--teal-700);margin:0">Results</p>
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;color:var(--ink-900);margin:0">Learning improves the local runtime; contracts expose where failures remain</h2>
         </div>
-        <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">The hidden answer oracle is unavailable during inference. It is introduced only after a run has terminated, when completed teacher trajectories are curated for training. This distinction matters: of 6,860 answer-producing teacher trajectories that pass every online runtime contract, 5,606 agree with the typed oracle and 1,254 do not. Without offline filtering, 18.28% of those runtime-pass traces would receive an incorrect positive training label.</p>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
-          <div style="padding:18px;border:1px solid var(--line);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:8px"><strong style="font-family:'Space Grotesk',sans-serif;color:var(--ink-900)">Direct-plan supervision</strong><span style="font-size:14px;line-height:1.7;color:var(--ink-600)">Question + structured interpretation → oracle-filtered executable program. The eligible verified pool contains 5,606 direct-plan trajectories before bucket-stratified down-selection.</span></div>
-          <div style="padding:18px;border:1px solid var(--line);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:8px"><strong style="font-family:'Space Grotesk',sans-serif;color:var(--ink-900)">Repair supervision</strong><span style="font-size:14px;line-height:1.7;color:var(--ink-600)">Failed state + structured diagnostic → revised program. The retained pool contains 1,747 oracle-correct repaired trajectories, preserving the rejected predecessor rather than only the final answer.</span></div>
-          <div style="padding:18px;border:1px solid var(--line);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:8px"><strong style="font-family:'Space Grotesk',sans-serif;color:var(--ink-900)">Preference supervision</strong><span style="font-size:14px;line-height:1.7;color:var(--ink-600)">Accepted and rejected alternatives under the same question and briefing form 390 preference pairs for later preference optimisation.</span></div>
-        </div>
-        <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">Training follows a teacher-to-student sequence. Step 1 and Step 2 SFT use three epochs at 1e−4; Step 2 RSFT uses two epochs at 5e−5; DPO uses one epoch at 5e−6 with β = 0.1. Local Qwen3-8B and Llama-3.1-8B checkpoints are trained with 4-bit QLoRA (rank 64, α = 128, dropout 0.05), bfloat16 computation, effective batch size 16, and a 6,144-token cutoff. The resulting models then generate model-specific on-policy trajectories for RSFT and additional accepted–rejected pairs for DPO.</p>
-        <figure style="margin:8px 0 0;border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;background:#ffffff">
-          <a href="uploads/gain_ladder%20(3).pdf" target="_blank" rel="noreferrer" style="display:block;border:0"><img src="uploads/gain_ladder.png" alt="Training ladder for Qwen and Llama and frozen-system performance on the primary test" style="display:block;width:100%;height:auto"></a>
-          <figcaption style="padding:13px 16px;background:var(--surface-soft);border-top:1px solid var(--line);font-size:13.5px;line-height:1.6;color:var(--ink-500);text-align:left"><strong style="color:var(--ink-700)">Training and frozen-system comparison.</strong> SFT improves both local model families, but later optimisation is model-dependent: DPO helps Qwen and hurts Llama. Checkpoints are therefore selected within each model family instead of assuming that every additional optimisation stage is beneficial.</figcaption>
+
+        <figure style="margin:0">
+          <object data="uploads/gain_ladder.pdf#view=FitH&amp;toolbar=0&amp;navpanes=0" type="application/pdf" style="display:block;width:100%;height:500px;border:1px solid var(--line);border-radius:var(--radius-md);background:#fff">
+            <p style="padding:20px;font-size:14px;color:var(--ink-600)">PDF preview unavailable. <a href="uploads/gain_ladder.pdf" target="_blank" rel="noreferrer">Open the result figure.</a></p>
+          </object>
+          <figcaption style="margin-top:10px;font-size:13.5px;line-height:1.7;color:var(--ink-500)">SFT improves both model families, while later optimisation is model-dependent: DPO improves Qwen but degrades Llama. On the frozen <strong style="color:var(--ink-700)">2,025-question primary test</strong>, the complete local Qwen runtime reaches <strong style="color:var(--ink-800)">85.68%</strong>, compared with <strong style="color:var(--ink-800)">69.19%</strong> for the cloud runtime.</figcaption>
+        </figure>
+
+        <figure style="margin:0">
+          <object data="uploads/gate_bar_and_repair_donut_v6.pdf#view=FitH&amp;toolbar=0&amp;navpanes=0" type="application/pdf" style="display:block;width:100%;height:470px;border:1px solid var(--line);border-radius:var(--radius-md);background:#fff">
+            <p style="padding:20px;font-size:14px;color:var(--ink-600)">PDF preview unavailable. <a href="uploads/gate_bar_and_repair_donut_v6.pdf" target="_blank" rel="noreferrer">Open the repair figure.</a></p>
+          </object>
+          <figcaption style="margin-top:10px;font-size:13.5px;line-height:1.7;color:var(--ink-500)">Most represented runtime violations are detected before execution, especially during grounding. Of <strong style="color:var(--ink-700)">3,626</strong> answerable attempts entering formal repair, <strong style="color:var(--ink-800)">48.18%</strong> recover to an oracle-correct result under the fixed repair budget; 8.63% are runtime-accepted but oracle-wrong, and 43.19% remain unresolved.</figcaption>
         </figure>
       </div>
     </section>
 
-    <section style="max-width:880px;margin:0 auto;padding:52px 32px 42px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:22px">
-      <div style="display:flex;flex-direction:column;gap:8px">
-        <p style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.13em;text-transform:uppercase;color:var(--teal-700);margin:0">05 · Evaluation</p>
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">A frozen primary test separates checkpoint selection from final system comparison</h2>
+    <!-- ROBUSTNESS / SCOPE -->
+    <section style="max-width:900px;margin:0 auto;padding:54px 32px 46px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:22px">
+      <div style="display:flex;flex-direction:column;gap:7px">
+        <p style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.13em;text-transform:uppercase;color:var(--teal-700);margin:0">Robustness & scope</p>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;color:var(--ink-900);margin:0">What transfers, and what the claims do not imply</h2>
       </div>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">A balanced 260-question development subset is held out from the 2,285-row frozen evaluation partition for checkpoint selection, leaving a disjoint <strong style="color:var(--ink-800)">2,025-question primary set</strong>. Each frozen cloud, local, hybrid, and retrieval configuration is run three times on the same primary questions to measure serving-time variability. The complete local Qwen runtime averages <strong style="color:var(--ink-900)">85.68%</strong> (SD 1.38 pp), versus <strong style="color:var(--ink-900)">69.19%</strong> (SD 0.96 pp) for the cloud runtime.</p>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">The gain is not obtained by simply withholding difficult questions. On the archived item-level run, local Qwen raises release coverage on answerable questions from <strong style="color:var(--ink-800)">82.20% to 91.36%</strong> while reducing conditional error among released answers from <strong style="color:var(--ink-800)">21.37% to 8.95%</strong>. It also correctly rejects all 200 unsupported/ambiguous cases and handles all 100 valid empty-denotation cases. Access-only baselines remain much lower: top-40 retrieval reaches 38.22%, gold-constraint retrieval 24.49%, and closed-book answering 15.65%.</p>
-      <p style="font-size:14.5px;line-height:1.72;color:var(--ink-500);margin:0;text-wrap:pretty">The 85.68% result is attributed to the complete local runtime rather than to a single learned stage. The graph, deterministic backend, contracts, repair budget, and scorer are held fixed across the main system comparison; hybrid configurations provide a stage-wise substitution analysis but are not used for strict causal attribution.</p>
-    </section>
-
-    <section style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:52px 32px">
-      <div style="max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:18px">
-        <div style="display:flex;flex-direction:column;gap:8px">
-          <p style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.13em;text-transform:uppercase;color:var(--teal-700);margin:0">06 · Robustness and reuse</p>
-          <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">The executable core is reusable, while interpretation and grounding remain domain-specific</h2>
-        </div>
-        <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">PACS tests surface robustness while holding the executable tree and oracle fixed. The trained Qwen planner reaches <strong style="color:var(--ink-800)">78.31%</strong> on channel A and <strong style="color:var(--ink-800)">77.11%</strong> on its paraphrased counterpart, compared with 33.84% for untuned Qwen3-8B and 50.98% for the cloud planner.</p>
-        <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">WikiTableQuestions changes the domain, schema, and data source. The procurement-trained checkpoint moves the untuned 22.51% baseline to 27.33% without WTQ-specific training; answer-only self-harvest reaches 44.43%, and translated gold programs reach 51.80% under the official evaluator. The recursive algebra, validator, and deterministic executor are reused, with one row-preserving arg-extremum operator added for WTQ; schema interpretation, grounding, and contract semantics still require target-domain adaptation.</p>
+      <p style="font-size:15.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">On PACS, the trained Qwen planner reaches <strong style="color:var(--ink-800)">78.31%</strong> on the primary channel and 77.11% on its paraphrased counterpart, versus 50.98% for the cloud planner. On WikiTableQuestions, the same recursive algebra, validator, and deterministic executor are reused: procurement-trained Qwen improves the untuned 22.51% baseline to 27.33%, while target-domain supervision reaches 44.43% and 51.80% under the reported protocols.</p>
+      <div style="border-left:3px solid var(--line-soft);padding:2px 0 2px 18px;display:flex;flex-direction:column;gap:10px;font-size:14.5px;line-height:1.7;color:var(--ink-600)">
+        <span><strong style="color:var(--ink-800)">Contract passing is not semantic proof.</strong> It means that no violation represented by the declared predicates remains.</span>
+        <span><strong style="color:var(--ink-800)">85.68% is a complete-system result.</strong> It should not be interpreted as a causal attribution to one learned stage.</span>
+        <span><strong style="color:var(--ink-800)">WTQ demonstrates architectural reuse, not zero-cost transfer.</strong> Interpretation, grounding, and contract semantics remain domain-specific.</span>
       </div>
     </section>
 
-    <section style="max-width:880px;margin:0 auto;padding:50px 32px 28px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:18px">
-      <div style="display:flex;flex-direction:column;gap:8px">
-        <p style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.13em;text-transform:uppercase;color:var(--teal-700);margin:0">Scope</p>
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">What the verification claims—and what it does not</h2>
+    <!-- TAKEAWAY + BIBTEX -->
+    <section style="background:var(--surface);border-top:1px solid var(--line);padding:46px 32px 38px">
+      <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:13px;text-align:center">
+        <p style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.13em;text-transform:uppercase;color:var(--teal-700);margin:0">Takeaway</p>
+        <p style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;line-height:1.55;color:var(--ink-900);margin:0;text-wrap:balance">The contribution is not simply an executable program, but a typed trajectory that preserves what was proposed, where it failed, how it was repaired, what evidence supported release, and which parts may later become supervision.</p>
       </div>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">The contracts guarantee only that represented predicates have passed; they do not prove that every semantic condition has been captured. The fixed repair budget leaves some potentially recoverable failures unresolved, the current repair audit has no blind-retry control, and the reported repeated runs measure inference variability rather than training-seed variance. Cross-domain reuse also retains an adaptation cost because new schemas require new grounding and contract semantics.</p>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">These boundaries are intentional. The contribution is a common computational record on which diagnosis, repair, curation, and later learning can operate without conflating executability, runtime acceptance, and offline correctness.</p>
     </section>
 
-    <section style="max-width:880px;margin:0 auto;padding:14px 32px 42px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:18px">
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">Takeaway</h2>
-      <p style="font-size:16.5px;line-height:1.8;color:var(--ink-600);margin:0;text-wrap:pretty">The central contribution is representational rather than a new retrieval heuristic: interpretation, program construction, grounding, execution, contract outcomes, diagnostics, revisions, and release state remain linked in one typed trajectory. That trajectory makes recognised failures localisable, supports bounded repair without online access to reference answers, and later becomes a curation object for direct-plan, repair, and preference supervision.</p>
-    </section>
-
-    <section style="max-width:880px;margin:0 auto;padding:0 32px 80px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:12px">
+    <section style="max-width:760px;margin:0 auto;padding:40px 32px 80px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:12px">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:var(--ink-900);margin:0">BibTeX</h2>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:21px;color:var(--ink-900);margin:0">BibTeX</h2>
         <button type="button" onClick="{{ copyBib }}" style="display:inline-flex;align-items:center;gap:7px;min-height:34px;padding:0 14px;border:1px solid var(--line);border-radius:var(--radius-pill);background:none;color:var(--ink-600);font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all 140ms cubic-bezier(0.22,1,0.36,1)" style-hover="color:var(--ink-900);border-color:var(--ink-900)" style-active="transform:scale(0.98)"><i data-lucide="copy" style="width:14px;height:14px;flex:none"></i>Copy</button>
       </div>
-      <pre id="bibtex-code" style="margin:0;padding:20px;background:var(--surface-soft);border:1px solid var(--line);border-radius:var(--radius-md);overflow-x:auto;font-family:'Space Mono',monospace;font-size:13px;line-height:1.7;color:var(--ink-700)">@mastersthesis{zhou2026auditable,
+      <pre id="bibtex-code" style="margin:0;padding:18px;background:var(--surface-soft);border:1px solid var(--line);border-radius:var(--radius-md);overflow-x:auto;font-family:'Space Mono',monospace;font-size:12.5px;line-height:1.7;color:var(--ink-700)">@mastersthesis{zhou2026typed,
   title  = {Typed Stage Contracts for Knowledge Graph Question Answering: Traceable Reasoning, Bounded Repair, and Trajectory Supervision},
   author = {Zhou, Hai},
   school = {University College London},
-  year   = {2026},
-  note   = {Manuscript in preparation}
+  year   = {2026}
 }</pre>
     </section>
   </div>
   </sc-if>
-  
-<sc-if value="{{ isRerank }}" hint-placeholder-val="{{ false }}">
+
+  <sc-if value="{{ isRerank }}" hint-placeholder-val="{{ false }}">
   <div style="display:flex;flex-direction:column">
 
     <section style="max-width:900px;margin:0 auto;padding:56px 32px 40px;display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center">
