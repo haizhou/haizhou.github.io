@@ -348,9 +348,11 @@
         </div>
 
         <figure style="margin:0">
-          <a href="uploads/gain_ladder.pdf" target="_blank" rel="noreferrer" style="display:block;border:0">
-            <div style="border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;background:#fff"><img src="uploads/gain_ladder.png" alt="Training ladder and frozen-system comparison for Qwen and Llama runtimes" style="display:block;width:100%;height:auto"></div>
-          </a>
+          <div style="position:relative;width:100%;aspect-ratio:2.30 / 1;border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;background:#fff">
+            <object data="uploads/gain_ladder.pdf#view=FitH&amp;toolbar=0&amp;navpanes=0&amp;scrollbar=0" type="application/pdf" aria-label="Training ladder and frozen-system comparison for Qwen and Llama runtimes" style="position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff">
+              <div style="padding:24px;font-size:14px;line-height:1.7;color:var(--ink-600)">Inline PDF preview is unavailable in this browser. <a href="uploads/gain_ladder.pdf" target="_blank" rel="noreferrer">Open the vector figure.</a></div>
+            </object>
+          </div>
           <figcaption style="margin-top:12px;font-size:13.5px;line-height:1.7;color:var(--ink-500)"><strong style="color:var(--ink-700)">What to notice.</strong> Initial SFT produces a large gain for both Qwen and Llama, showing that typed trajectories provide useful supervision. Later optimisation is model-dependent: RSFT and DPO continue to improve Qwen, while DPO reduces Llama performance. On the frozen <strong style="color:var(--ink-700)">2,025-question primary test</strong>, the complete local Qwen runtime reaches <strong style="color:var(--ink-800)">85.68%</strong>, compared with <strong style="color:var(--ink-800)">69.19%</strong> for the cloud runtime. This is a complete-system comparison rather than evidence that one training stage alone causes the gain. <a href="uploads/gain_ladder.pdf" target="_blank" rel="noreferrer">Open the vector figure.</a></figcaption>
         </figure>
 
@@ -360,9 +362,11 @@
         </div>
 
         <figure style="margin:0">
-          <a href="uploads/gate_bar_and_repair_donut_v6.pdf" target="_blank" rel="noreferrer" style="display:block;border:0">
-            <div style="border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;background:#fff"><img src="uploads/gate_bar_and_repair_donut_v6.png" alt="Stage-specific contract activations and bounded repair outcomes" style="display:block;width:100%;height:auto"></div>
-          </a>
+          <div style="position:relative;width:100%;aspect-ratio:2.05 / 1;border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;background:#fff">
+            <object data="uploads/gate_bar_and_repair_donut_v6.pdf#view=FitH&amp;toolbar=0&amp;navpanes=0&amp;scrollbar=0" type="application/pdf" aria-label="Stage-specific contract activations and bounded repair outcomes" style="position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff">
+              <div style="padding:24px;font-size:14px;line-height:1.7;color:var(--ink-600)">Inline PDF preview is unavailable in this browser. <a href="uploads/gate_bar_and_repair_donut_v6.pdf" target="_blank" rel="noreferrer">Open the vector figure.</a></div>
+            </object>
+          </div>
           <figcaption style="margin-top:12px;font-size:13.5px;line-height:1.7;color:var(--ink-500)"><strong style="color:var(--ink-700)">What to notice.</strong> Most recorded contract violations occur before execution, particularly during grounding, where unresolved schema matches, dropped constraints, and type violations become mechanically detectable. Of <strong style="color:var(--ink-700)">3,626</strong> answerable attempts entering formal repair, <strong style="color:var(--ink-800)">48.18%</strong> recover to an oracle-correct result under the fixed repair budget; 8.63% pass the runtime contracts but remain oracle-wrong, and 43.19% remain unresolved. Runtime acceptance is therefore not treated as proof of semantic correctness: among 6,860 answer-producing teacher trajectories that passed all online contracts, 1,254 still disagreed with the offline typed oracle and are filtered before export. <a href="uploads/gate_bar_and_repair_donut_v6.pdf" target="_blank" rel="noreferrer">Open the vector figure.</a></figcaption>
         </figure>
       </div>
